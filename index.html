@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Unbehind — You don't need an AI strategy.</title>
 
-<meta name="description" content="A small studio for seed-stage founders. We build the three or four AI workflows that actually save you a day a week. That's it. That's the product.">
+<meta name="description" content="A small studio that builds the three or four AI workflows that actually save you a day a week. For seed-stage founders.">
 <link rel="canonical" href="https://unbehind.ai">
 
 <meta property="og:title" content="Unbehind — You don't need an AI strategy. You need a Thursday afternoon.">
-<meta property="og:description" content="A small studio for seed-stage founders. We build the three or four AI workflows that actually save you a day a week.">
+<meta property="og:description" content="A small studio that builds the three or four AI workflows that actually save you a day a week. For seed-stage founders.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://unbehind.ai">
 <meta property="og:image" content="https://unbehind.ai/og.png">
@@ -19,769 +19,750 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Unbehind — You don't need an AI strategy. You need a Thursday afternoon.">
-<meta name="twitter:description" content="A small studio for seed-stage founders. We build the three or four AI workflows that actually save you a day a week.">
+<meta name="twitter:description" content="A small studio that builds the three or four AI workflows that actually save you a day a week.">
 <meta name="twitter:image" content="https://unbehind.ai/og.png">
 
-<meta name="theme-color" content="#F3EEE2">
+<meta name="theme-color" content="#0A0A0B">
+<meta name="color-scheme" content="dark">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --paper: #F3EEE2;
-    --paper-soft: #EDE6D6;
-    --ink: #0A0A0A;
-    --ink-soft: #3B3B3B;
-    --ink-mute: #7A7063;
-    --accent: #8B1A1A;
-    --accent-soft: #A8312E;
-    --accent-deep: #6A1414;
-    --rule: rgba(10, 10, 10, 0.14);
-    --rule-soft: rgba(10, 10, 10, 0.07);
+    --bg:          #0A0A0B;
+    --bg-surface:  #121214;
+    --bg-elevated: #1A1A1D;
+    --ink:         #F5F5F4;
+    --ink-soft:    #A8A8A5;
+    --ink-mute:    #6E6E6B;
+    --border:      rgba(255, 255, 255, 0.08);
+    --border-soft: rgba(255, 255, 255, 0.05);
+    --border-hi:   rgba(255, 255, 255, 0.14);
+
+    --grad-1: #A78BFA;   /* soft lavender */
+    --grad-2: #F0ABA1;   /* peach */
+    --grad-3: #7DD3C0;   /* mint */
+
+    --accent:      #C7B9FF;   /* subtle lavender-tint for text accents */
+    --accent-mute: #8B7FD1;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--paper);
+    background: var(--bg);
     color: var(--ink);
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-variation-settings: "opsz" 14, "SOFT" 30;
+    letter-spacing: -0.005em;
+    overflow-x: hidden;
   }
 
-  /* Subtle paper noise */
+  /* ambient gradient wash behind hero — subtle, blurred */
   body::before {
     content: '';
     position: fixed;
-    inset: 0;
+    top: -20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120vw;
+    height: 90vh;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 30%, rgba(167, 139, 250, 0.18), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 75% 40%, rgba(240, 171, 161, 0.14), transparent 70%),
+      radial-gradient(ellipse 60% 45% at 50% 80%, rgba(125, 211, 192, 0.10), transparent 70%);
+    filter: blur(60px);
     pointer-events: none;
-    z-index: 1000;
-    opacity: 0.35;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.10 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    z-index: 0;
   }
 
-  a { color: inherit; }
+  a { color: inherit; text-decoration: none; }
 
   .container {
-    max-width: 1200px;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 28px;
     position: relative;
     z-index: 1;
   }
 
-  .narrow { max-width: 840px; margin: 0 auto; }
+  /* ============ NAV ============ */
 
-  /* ============ HEADER ============ */
-
-  header.top {
-    padding: 24px 32px;
+  nav.top {
+    padding: 22px 28px;
+    max-width: 1140px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
     position: relative;
     z-index: 10;
   }
 
   .wordmark {
-    font-family: 'Fraunces', serif;
+    font-family: 'Geist', sans-serif;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 18px;
     letter-spacing: -0.015em;
     color: var(--ink);
-  }
-
-  .wordmark em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
-  }
-
-  .price-flag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
     display: flex;
-    gap: 14px;
     align-items: center;
+    gap: 8px;
   }
 
-  .price-flag strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
-
-  .price-flag .sep {
-    width: 3px;
-    height: 3px;
-    background: var(--accent);
+  .wordmark::before {
+    content: '';
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    display: inline-block;
+    background: conic-gradient(from 180deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
+    filter: saturate(0.9) brightness(1.05);
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    color: var(--ink-soft);
+    transition: color 0.2s;
+  }
+  .nav-link:hover { color: var(--ink); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .btn-primary:hover {
+    background: #fff;
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--border-hi);
+  }
+  .btn-ghost:hover {
+    border-color: var(--ink);
+    background: rgba(255, 255, 255, 0.04);
   }
 
   /* ============ HERO ============ */
 
   .hero {
-    padding: 80px 32px 120px;
-    max-width: 1400px;
+    padding: 80px 28px 140px;
+    max-width: 1140px;
     margin: 0 auto;
     position: relative;
+    z-index: 1;
   }
 
-  .hero-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 48px;
-    display: flex;
+  .eyebrow {
+    display: inline-flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    padding: 7px 14px 7px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 40px;
   }
 
-  .hero-label::before {
+  .eyebrow::before {
     content: '';
-    width: 32px;
-    height: 2px;
-    background: var(--accent);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--grad-2);
+    box-shadow: 0 0 10px var(--grad-2);
   }
 
   .hero h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(56px, 11.5vw, 172px);
-    line-height: 0.93;
-    letter-spacing: -0.04em;
-    margin-bottom: 48px;
-    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: clamp(36px, 5.2vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
     color: var(--ink);
-    max-width: 14ch;
+    max-width: 20ch;
+    margin-bottom: 28px;
   }
 
-  .hero h1 em {
+  .hero h1 .grad {
+    background: linear-gradient(110deg, var(--grad-1) 0%, var(--grad-2) 50%, var(--grad-3) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-style: italic;
-    font-weight: 300;
-    color: var(--accent);
+    font-weight: 400;
   }
 
   .hero-sub {
-    font-size: clamp(19px, 2vw, 24px);
-    line-height: 1.45;
+    font-size: 18px;
+    line-height: 1.55;
     color: var(--ink-soft);
-    max-width: 620px;
+    max-width: 540px;
+    margin-bottom: 40px;
     font-weight: 400;
-    font-style: italic;
   }
 
-  /* ============ PROOF STRIP ============ */
-
-  .proof-strip {
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    padding: 22px 32px;
-    margin: 0 auto;
-    max-width: 1400px;
+  .hero-ctas {
     display: flex;
-    gap: 36px;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 14px;
-    color: var(--ink-soft);
-  }
-
-  .proof-strip span {
-    display: flex;
+    gap: 12px;
     align-items: center;
-    gap: 36px;
+    flex-wrap: wrap;
   }
 
-  .proof-strip span:not(:last-child)::after {
-    content: '';
-    width: 4px;
-    height: 4px;
-    background: var(--accent);
-    border-radius: 50%;
-    display: inline-block;
+  .hero-prices {
+    margin-top: 40px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-mute);
   }
 
-  /* ============ SECTIONS ============ */
+  .hero-prices span { display: flex; gap: 6px; }
+  .hero-prices strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ============ SECTION BASE ============ */
 
   section {
-    padding: 96px 32px;
-    max-width: 1400px;
+    padding: 100px 28px;
+    max-width: 1140px;
     margin: 0 auto;
     position: relative;
+    z-index: 1;
   }
 
-  section.bordered { border-top: 1px solid var(--rule); }
+  .section-head {
+    max-width: 680px;
+    margin-bottom: 56px;
+  }
 
-  .section-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
+  .section-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
     color: var(--ink-mute);
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
+    gap: 10px;
   }
 
-  .section-label .lbl-left { color: var(--ink); display: flex; gap: 10px; align-items: center; }
-  .section-label .lbl-left::before {
+  .section-tag::before {
     content: '';
-    width: 22px;
+    width: 18px;
     height: 1px;
-    background: var(--accent);
+    background: var(--ink-mute);
   }
 
   h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(36px, 5.5vw, 64px);
-    line-height: 1.02;
-    letter-spacing: -0.035em;
-    font-variation-settings: "opsz" 96, "SOFT" 30;
-    max-width: 20ch;
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 40px);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
     color: var(--ink);
-    margin-bottom: 24px;
+    max-width: 22ch;
   }
 
-  h2 em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
-  }
-
-  .lead {
-    font-size: 20px;
-    line-height: 1.5;
-    color: var(--ink-soft);
-    max-width: 640px;
-    margin-top: 8px;
+  h2 .grad {
+    background: linear-gradient(110deg, var(--grad-1), var(--grad-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-style: italic;
   }
 
-  /* ============ SERVICES ============ */
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-top: 48px;
-    border-top: 1px solid var(--ink);
-    border-left: 1px solid var(--ink);
-  }
-
-  .service-card {
-    border-right: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
-    padding: 36px 32px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background: var(--paper);
-    transition: background 0.25s ease;
-    position: relative;
-  }
-
-  .service-card:hover { background: var(--paper-soft); }
-  .service-card.featured { background: var(--ink); color: var(--paper); }
-  .service-card.featured:hover { background: #1a1a1a; }
-
-  .service-price {
-    font-family: 'Fraunces', serif;
-    font-size: 56px;
-    font-weight: 300;
-    letter-spacing: -0.03em;
-    color: var(--accent);
-    line-height: 1;
-    font-variation-settings: "opsz" 144;
-  }
-
-  .service-card.featured .service-price { color: var(--accent-soft); }
-
-  .service-price sub {
-    font-size: 14px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 400;
-    color: var(--ink-mute);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    vertical-align: baseline;
-    margin-left: 8px;
-  }
-
-  .service-card.featured .service-price sub { color: rgba(243, 238, 226, 0.55); }
-
-  .service-card h3 {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 28px;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
-  }
-
-  .service-card h3 em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
-  }
-
-  .service-card.featured h3 em { color: var(--accent-soft); }
-
-  .service-meta {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-
-  .service-card.featured .service-meta { color: rgba(243, 238, 226, 0.55); }
-
-  .service-card p {
+  .section-lead {
+    margin-top: 16px;
     font-size: 16px;
-    line-height: 1.5;
     color: var(--ink-soft);
-    flex-grow: 1;
-  }
-
-  .service-card.featured p { color: rgba(243, 238, 226, 0.78); }
-
-  .service-cta {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--accent);
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 2px;
-    align-self: flex-start;
-    transition: all 0.2s ease;
-  }
-
-  .service-card.featured .service-cta {
-    color: var(--accent-soft);
-    border-bottom-color: var(--accent-soft);
-  }
-
-  .service-cta:hover {
-    color: var(--ink);
-    border-bottom-color: var(--ink);
-  }
-
-  .service-card.featured .service-cta:hover {
-    color: var(--paper);
-    border-bottom-color: var(--paper);
+    max-width: 560px;
   }
 
   /* ============ ACTUALLY (anti-hype) ============ */
 
-  .actually {
-    padding: 120px 32px;
-    background: var(--ink);
-    color: var(--paper);
-    margin: 0 auto;
-    max-width: 1400px;
-    position: relative;
+  .actually-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
   }
 
-  .actually .section-label { color: rgba(243, 238, 226, 0.5); }
-  .actually .section-label .lbl-left { color: var(--paper); }
-  .actually .section-label .lbl-left::before { background: var(--accent-soft); }
+  .actually-card {
+    background: var(--bg-surface);
+    padding: 32px 28px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
 
-  .actually h2 { color: var(--paper); max-width: 22ch; }
-  .actually h2 em { color: var(--accent-soft); }
+  .actually-cross {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(240, 171, 161, 0.14);
+    color: var(--grad-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
 
-  .actually-list {
-    list-style: none;
-    margin-top: 48px;
+  .actually-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .actually-card p .light {
+    color: var(--ink-soft);
+  }
+
+  /* ============ SERVICES ============ */
+
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .service {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 16px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
   }
 
-  .actually-list li {
-    padding: 28px 0;
-    border-top: 1px solid rgba(243, 238, 226, 0.15);
-    font-family: 'Fraunces', serif;
-    font-size: clamp(20px, 2.4vw, 28px);
-    font-weight: 300;
-    line-height: 1.35;
-    letter-spacing: -0.015em;
-    color: var(--paper);
-    max-width: 820px;
-    font-variation-settings: "opsz" 36;
+  .service:hover {
+    border-color: var(--border-hi);
+    transform: translateY(-2px);
   }
 
-  .actually-list li:last-child { border-bottom: 1px solid rgba(243, 238, 226, 0.15); }
+  .service.featured {
+    background: linear-gradient(165deg, rgba(167, 139, 250, 0.10), rgba(240, 171, 161, 0.04) 60%, transparent);
+    border-color: rgba(167, 139, 250, 0.22);
+  }
+  .service.featured::before {
+    content: 'Most chosen';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 4px 10px;
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    border-radius: 999px;
+  }
 
-  .actually-list li em {
-    font-style: italic;
-    font-weight: 300;
-    color: var(--accent-soft);
+  .service-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+  }
+
+  .service h3 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .service-price {
+    font-family: 'Geist', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .service-price .unit {
+    font-size: 13px;
+    color: var(--ink-mute);
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .service p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    flex-grow: 1;
+  }
+
+  .service-cta {
+    margin-top: 8px;
+    font-family: 'Geist', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+    align-self: flex-start;
+  }
+  .service-cta:hover {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
   }
 
   /* ============ WORKFLOWS ============ */
 
-  .workflows-intro {
-    max-width: 820px;
-  }
-
   .workflows {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-top: 48px;
-    border-top: 1px solid var(--rule);
-    border-left: 1px solid var(--rule);
+    gap: 12px;
   }
 
   .workflow {
-    border-right: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    padding: 32px 28px;
-    position: relative;
-    transition: background 0.3s ease;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    transition: all 0.25s ease;
   }
 
-  .workflow:hover { background: var(--paper-soft); }
+  .workflow:hover {
+    background: var(--bg-elevated);
+    border-color: var(--border-hi);
+  }
 
-  .workflow-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.22em;
+  .workflow-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-    font-weight: 500;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .workflow-tag::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--grad-2);
   }
 
   .workflow h4 {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: 22px;
-    letter-spacing: -0.02em;
-    line-height: 1.18;
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.015em;
+    line-height: 1.35;
     color: var(--ink);
-    font-style: italic;
-    font-variation-settings: "opsz" 36;
   }
 
-  /* ============ HOW IT WORKS ============ */
+  /* ============ HOW ============ */
 
-  .steps {
+  .how-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
-    margin-top: 56px;
+    gap: 24px;
   }
 
-  .step-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-    padding-top: 18px;
-    border-top: 2px solid var(--accent);
-    display: block;
-    width: 52px;
+  .how-step {
+    padding: 0;
   }
 
-  .step h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 24px;
+  .how-step .num {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-hi);
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  .how-step h4 {
+    font-family: 'Geist', sans-serif;
     font-weight: 500;
-    line-height: 1.18;
+    font-size: 17px;
     letter-spacing: -0.015em;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     color: var(--ink);
   }
 
-  .step h3 em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
-  }
-
-  .step p {
-    font-size: 16px;
+  .how-step p {
+    font-size: 14px;
     color: var(--ink-soft);
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   /* ============ FOUNDER ============ */
 
-  .founder-section {
-    padding: 120px 32px;
-    max-width: 1400px;
-    margin: 0 auto;
-    border-top: 1px solid var(--rule);
-  }
-
-  .founder-grid {
+  .founder {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 56px;
-    align-items: start;
-    margin-top: 24px;
+    grid-template-columns: 120px 1fr;
+    gap: 32px;
+    align-items: center;
+    max-width: 860px;
+    margin: 0 auto;
   }
 
-  .founder-photo {
-    width: 320px;
-    height: 380px;
-    background: var(--ink);
-    color: var(--paper);
+  .founder-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--grad-1) 0%, var(--grad-2) 60%, var(--grad-3) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Geist', sans-serif;
+    font-size: 54px;
+    font-weight: 300;
+    color: var(--bg);
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
     position: relative;
     overflow: hidden;
-    border: 1px solid var(--ink);
   }
 
-  .founder-photo img {
+  .founder-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-  }
-
-  /* placeholder until real photo loaded */
-  .founder-photo.placeholder::before {
-    content: 'J';
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 220px;
-    color: var(--accent);
-    font-variation-settings: "opsz" 144;
-    line-height: 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .founder-photo.placeholder::after {
-    content: 'Photo coming.';
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(243, 238, 226, 0.4);
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
+    border-radius: 999px;
   }
 
   .founder-note {
-    padding-top: 12px;
+    min-width: 0;
   }
 
-  .founder-note .mini-label {
-    font-family: 'IBM Plex Mono', monospace;
+  .founder-note .meta {
+    font-family: 'Geist Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 24px;
+    color: var(--ink-mute);
+    margin-bottom: 12px;
   }
 
-  .founder-note blockquote {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(22px, 2.4vw, 30px);
-    line-height: 1.38;
-    letter-spacing: -0.015em;
+  .founder-note p {
+    font-size: 16px;
+    line-height: 1.55;
     color: var(--ink);
-    font-variation-settings: "opsz" 36;
   }
 
-  .founder-note blockquote em {
-    font-style: italic;
-    color: var(--accent);
+  .founder-note .credits {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--ink-mute);
   }
 
-  .founder-sign {
-    margin-top: 36px;
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 18px;
+  .founder-note .credits a {
     color: var(--ink-soft);
+    border-bottom: 1px solid var(--border-hi);
+    transition: all 0.2s ease;
   }
-
-  .founder-sign a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-    transition: border-color 0.2s;
+  .founder-note .credits a:hover {
+    color: var(--ink);
+    border-color: var(--ink);
   }
-
-  .founder-sign a:hover { border-color: var(--accent); }
 
   /* ============ CTA ============ */
 
   .cta {
-    padding: 120px 32px 96px;
     text-align: center;
-    border-top: 1px solid var(--rule);
-    max-width: 1400px;
+    padding: 120px 28px;
+    max-width: 1140px;
     margin: 0 auto;
+    position: relative;
   }
 
-  .cta .section-label { justify-content: center; gap: 24px; }
+  .cta-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 64px 40px;
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(167, 139, 250, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-card > * { position: relative; z-index: 1; }
+
   .cta h2 {
-    margin: 0 auto 40px;
-    text-align: center;
+    margin: 0 auto 20px;
     max-width: 18ch;
+  }
+
+  .cta-note {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 auto 32px;
+    max-width: 480px;
   }
 
   .cta-row {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 24px;
-  }
-
-  .cta-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--accent);
-    color: var(--paper);
-    padding: 22px 42px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.25s ease;
-    border: 1px solid var(--accent);
-  }
-
-  .cta-primary:hover {
-    background: var(--ink);
-    border-color: var(--ink);
-    transform: translateY(-2px);
-  }
-
-  .cta-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--ink);
-    padding: 22px 24px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: 1px solid var(--ink);
-    transition: color 0.2s ease;
-  }
-
-  .cta-secondary:hover { color: var(--accent); border-bottom-color: var(--accent); }
-
-  .cta-note {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 15px;
-    color: var(--ink-mute);
-    margin-top: 32px;
+    margin-bottom: 20px;
   }
 
   .capacity {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-top: 8px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-mute);
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .capacity::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--grad-3);
+    box-shadow: 0 0 10px var(--grad-3);
   }
 
   /* ============ FOOTER ============ */
 
   footer {
-    padding: 32px;
-    border-top: 1px solid var(--rule-soft);
-    max-width: 1400px;
+    padding: 40px 28px;
+    max-width: 1140px;
     margin: 0 auto;
+    border-top: 1px solid var(--border-soft);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
     color: var(--ink-mute);
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
   }
 
-  footer a {
-    color: var(--ink-mute);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  footer a:hover { color: var(--accent); }
+  footer a { color: var(--ink-mute); transition: color 0.2s; }
+  footer a:hover { color: var(--ink); }
 
   /* ============ A11Y ============ */
 
-  .cta-primary:focus-visible,
-  .cta-secondary:focus-visible {
-    outline: 2px solid var(--ink);
-    outline-offset: 4px;
+  .btn:focus-visible,
+  .service-cta:focus-visible {
+    outline: 2px solid var(--grad-1);
+    outline-offset: 3px;
   }
   a:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--grad-1);
     outline-offset: 3px;
     border-radius: 2px;
   }
 
   ::selection {
-    background: var(--accent);
-    color: var(--paper);
+    background: var(--grad-1);
+    color: var(--bg);
   }
 
-  /* ============ REVEAL ANIMATIONS ============ */
+  /* ============ REVEAL ============ */
 
   .reveal {
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
   }
-
   .reveal.visible {
     opacity: 1;
     transform: translateY(0);
@@ -789,52 +770,35 @@
 
   /* ============ RESPONSIVE ============ */
 
-  @media (max-width: 900px) {
-    .services-grid,
-    .workflows,
-    .steps { grid-template-columns: 1fr 1fr; }
-
-    .founder-grid { grid-template-columns: 1fr; gap: 32px; }
-    .founder-photo { width: 100%; max-width: 380px; height: 420px; }
+  @media (max-width: 880px) {
+    .actually-grid { grid-template-columns: 1fr; }
+    .services { grid-template-columns: 1fr; }
+    .workflows { grid-template-columns: 1fr 1fr; }
+    .how-grid { grid-template-columns: 1fr; gap: 32px; }
+    .founder { grid-template-columns: 1fr; text-align: left; padding: 32px; }
+    .founder-avatar { width: 96px; height: 96px; font-size: 44px; }
   }
 
-  @media (max-width: 640px) {
-    body { font-size: 17px; }
-    .container, header.top, .hero, .proof-strip, section, .founder-section, .cta, footer {
-      padding-left: 22px;
-      padding-right: 22px;
-    }
-    header.top { flex-direction: column; gap: 14px; align-items: flex-start; padding-top: 22px; padding-bottom: 12px; }
-    .price-flag { font-size: 10px; gap: 10px; }
+  @media (max-width: 560px) {
+    body { font-size: 15px; }
+    nav.top, .hero, section, footer { padding-left: 20px; padding-right: 20px; }
+    nav.top { padding-top: 18px; padding-bottom: 18px; }
+    .nav-right { gap: 10px; }
+    .nav-link { display: none; }
 
-    .hero { padding-top: 40px; padding-bottom: 72px; }
-    .hero h1 { font-size: clamp(48px, 13vw, 80px); }
-    .hero-sub { font-size: 18px; }
+    .hero { padding-top: 48px; padding-bottom: 72px; }
+    .hero h1 { font-size: clamp(32px, 8vw, 44px); }
+    .hero-sub { font-size: 16px; }
 
-    .proof-strip { gap: 18px; font-size: 13px; padding: 18px 22px; }
-    .proof-strip span { gap: 18px; }
+    section { padding: 72px 20px; }
+    .section-head { margin-bottom: 36px; }
 
-    section { padding: 64px 22px; }
-    .actually { padding: 72px 22px; }
-    .founder-section { padding: 72px 22px; }
-    .cta { padding: 72px 22px 48px; }
+    .workflows { grid-template-columns: 1fr; }
 
-    .services-grid,
-    .workflows,
-    .steps { grid-template-columns: 1fr; }
+    .cta { padding: 72px 20px; }
+    .cta-card { padding: 44px 24px; }
 
-    .service-card { padding: 28px 24px 32px; }
-    .service-price { font-size: 44px; }
-    .service-card h3 { font-size: 24px; }
-
-    .workflow { padding: 24px 22px; }
-    .workflow h4 { font-size: 20px; }
-
-    .founder-photo { height: 360px; }
-    .founder-photo.placeholder::before { font-size: 180px; }
-
-    .cta-row { flex-direction: column; gap: 14px; }
-    .cta-primary, .cta-secondary { width: 100%; justify-content: center; }
+    .hero-prices { gap: 16px; font-size: 11px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -849,196 +813,198 @@
 </head>
 <body>
 
-<header class="top">
-  <div class="wordmark"><em>Un</em>behind</div>
-  <div class="price-flag">
-    <span><strong>£750</strong> Audit</span>
-    <span class="sep"></span>
-    <span><strong>£3,500</strong> Set-Up</span>
-    <span class="sep"></span>
-    <span><strong>£1,500</strong> / mo</span>
+<nav class="top">
+  <a href="/" class="wordmark">Unbehind</a>
+  <div class="nav-right">
+    <a href="#services" class="nav-link">Pricing</a>
+    <a href="#how" class="nav-link">How it works</a>
+    <a href="#book" class="btn btn-primary">Book the audit</a>
   </div>
-</header>
+</nav>
 
 <main>
 
   <!-- ===== HERO ===== -->
   <section class="hero">
-    <div class="hero-label">For seed-stage founders</div>
-    <h1>You don&rsquo;t need an AI <em>strategy</em>. You need a <em>Thursday afternoon</em>.</h1>
-    <p class="hero-sub">Unbehind is a small studio for seed-stage founders. We build the three or four AI workflows that actually save you a day a week. That&rsquo;s it. That&rsquo;s the product.</p>
+    <div class="eyebrow">For seed-stage founders</div>
+
+    <h1>You don't need an AI <span class="grad">strategy</span>. You need a <span class="grad">Thursday afternoon</span>.</h1>
+
+    <p class="hero-sub">Unbehind is a small studio that builds the three or four AI workflows that actually save you a day a week. That's the whole product.</p>
+
+    <div class="hero-ctas">
+      <a href="#book" class="btn btn-primary">Book the audit &nbsp;→</a>
+      <a href="#services" class="btn btn-ghost">See what's included</a>
+    </div>
+
+    <div class="hero-prices">
+      <span><strong>£750</strong> Audit</span>
+      <span><strong>£3,500</strong> Set-Up</span>
+      <span><strong>£1,500</strong>/mo Companion</span>
+    </div>
   </section>
 
-  <!-- ===== PROOF STRIP ===== -->
-  <div class="proof-strip">
-    <span>Trained at Saatchi</span>
-    <span>Employee #1 at a VC-backed startup</span>
-    <span>Co-founded an NHS-approved app (£1m raised)</span>
-    <span>Featured in The Times, Vogue, The Telegraph</span>
-  </div>
+  <!-- ===== ACTUALLY ===== -->
+  <section class="reveal">
+    <div class="section-head">
+      <div class="section-tag">Just so we're clear</div>
+      <h2>What Unbehind <span class="grad">isn't</span>.</h2>
+    </div>
+
+    <div class="actually-grid">
+      <div class="actually-card">
+        <div class="actually-cross">×</div>
+        <p>Not an <strong>AI agency</strong>. <span class="light">No autonomous agents, bespoke models, or five-year transformation decks.</span></p>
+      </div>
+      <div class="actually-card">
+        <div class="actually-cross">×</div>
+        <p>Not a <strong>fractional CTO</strong>. <span class="light">If you need one, we know two good ones and will introduce you.</span></p>
+      </div>
+      <div class="actually-card">
+        <div class="actually-cross">×</div>
+        <p>Not <strong>hype-led</strong>. <span class="light">Most of what the category sells is noise and we know it.</span></p>
+      </div>
+      <div class="actually-card">
+        <div class="actually-cross">×</div>
+        <p>Not a <strong>team</strong>. <span class="light">One person, a few good tools. It's deliberate.</span></p>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== SERVICES ===== -->
-  <section class="reveal">
-    <div class="section-label">
-      <span class="lbl-left">01 &mdash; What we do</span>
-      <span>Three offers. Fixed prices.</span>
+  <section id="services" class="reveal">
+    <div class="section-head">
+      <div class="section-tag">Pricing</div>
+      <h2>Three ways in. <span class="grad">Fixed prices. Shown.</span></h2>
+      <p class="section-lead">The Audit is the entry point. If it doesn't find anything worth building, you get a refund.</p>
     </div>
-    <h2>Three ways in. <em>Each one actually fixes something.</em></h2>
 
-    <div class="services-grid">
+    <div class="services">
 
-      <div class="service-card">
-        <div class="service-price">&pound;750<sub>One-off</sub></div>
-        <h3>The <em>Audit</em></h3>
-        <div class="service-meta">90-min conversation + written brief</div>
-        <p>You leave knowing the three workflows that would save you the most time, and which to build first. If none of them are worth it, we tell you.</p>
-        <a href="#book" class="service-cta">Book the audit &rarr;</a>
+      <div class="service">
+        <div class="service-tag">One-off</div>
+        <h3>The Audit</h3>
+        <div class="service-price">£750</div>
+        <p>A 90-minute conversation and a one-page written brief within 48 hours. You leave knowing which workflows to build and in what order.</p>
+        <a href="#book" class="service-cta">Book →</a>
       </div>
 
-      <div class="service-card featured">
-        <div class="service-price">&pound;3,500<sub>2-week sprint</sub></div>
-        <h3>The <em>Set-Up</em></h3>
-        <div class="service-meta">Three workflows built, live, documented</div>
-        <p>Two weeks. Three workflows live in your stack by the Friday of week two. We build them, document them, train whoever else on your team needs to run them.</p>
-        <a href="#book" class="service-cta">Start with the audit &rarr;</a>
+      <div class="service featured">
+        <div class="service-tag">Two-week sprint</div>
+        <h3>The Set-Up</h3>
+        <div class="service-price">£3,500</div>
+        <p>Three workflows live in your stack by the Friday of week two. Built, documented, and handed over. No maintenance contract required.</p>
+        <a href="#book" class="service-cta">Start with the audit →</a>
       </div>
 
-      <div class="service-card">
-        <div class="service-price">&pound;1,500<sub>Per month</sub></div>
-        <h3>The <em>Companion</em></h3>
-        <div class="service-meta">Weekly call + one new workflow / month</div>
-        <p>For founders who want a second brain on AI without hiring one. Judgement on what&rsquo;s hype and what&rsquo;s useful. A new thing built every month.</p>
-        <a href="#book" class="service-cta">Start with the audit &rarr;</a>
+      <div class="service">
+        <div class="service-tag">Monthly</div>
+        <h3>The Companion</h3>
+        <div class="service-price">£1,500 <span class="unit">/ mo</span></div>
+        <p>One call a week, one new workflow every month. Judgement on what's hype and what's useful. Cancel any time.</p>
+        <a href="#book" class="service-cta">Start with the audit →</a>
       </div>
 
     </div>
-  </section>
-
-  <!-- ===== ACTUALLY (anti-hype) ===== -->
-  <section class="actually reveal">
-    <div class="section-label">
-      <span class="lbl-left">02 &mdash; While we&rsquo;re here</span>
-      <span>Some things we&rsquo;re not</span>
-    </div>
-    <h2>A short list of things Unbehind <em>is not</em>.</h2>
-
-    <ul class="actually-list">
-      <li>We are <em>not</em> an AI agency. We don&rsquo;t build autonomous agents, bespoke models, or five-year transformation decks.</li>
-      <li>We don&rsquo;t say things like &ldquo;<em>AI-native</em>&rdquo; or &ldquo;<em>unlock exponential value</em>&rdquo;. Most of that is noise and we know it.</li>
-      <li>We are <em>not</em> a fractional CTO. If you need one, we know two good ones and will introduce you.</li>
-      <li>We&rsquo;re <em>one person</em> with a few good tools. That&rsquo;s the whole business. It&rsquo;s deliberate.</li>
-    </ul>
   </section>
 
   <!-- ===== WORKFLOWS ===== -->
   <section class="reveal">
-    <div class="section-label">
-      <span class="lbl-left">03 &mdash; For example</span>
-      <span>The kinds of things we build</span>
-    </div>
-    <div class="workflows-intro">
-      <h2>Not agents. <em>Not chatbots. Just useful.</em></h2>
-      <p class="lead">Six real things founders ask for, every month.</p>
+    <div class="section-head">
+      <div class="section-tag">For example</div>
+      <h2>The <span class="grad">small, useful bit</span>.</h2>
+      <p class="section-lead">Six real things founders ask for, every month.</p>
     </div>
 
     <div class="workflows">
       <div class="workflow">
-        <div class="workflow-label">Inbox</div>
+        <div class="workflow-tag">Inbox</div>
         <h4>Your inbox, answered by 9am. Not by you.</h4>
       </div>
       <div class="workflow">
-        <div class="workflow-label">Meetings</div>
+        <div class="workflow-tag">Meetings</div>
         <h4>Never walk into a meeting cold again.</h4>
       </div>
       <div class="workflow">
-        <div class="workflow-label">Pipeline</div>
+        <div class="workflow-tag">Pipeline</div>
         <h4>Stop updating the CRM. It updates itself.</h4>
       </div>
       <div class="workflow">
-        <div class="workflow-label">Writing</div>
-        <h4>Emails that sound like you, because you wrote them. Once.</h4>
+        <div class="workflow-tag">Writing</div>
+        <h4>Emails that sound like you. Because you wrote them, once.</h4>
       </div>
       <div class="workflow">
-        <div class="workflow-label">Content</div>
-        <h4>A LinkedIn post in your voice, in ten minutes a week.</h4>
+        <div class="workflow-tag">Content</div>
+        <h4>A LinkedIn post, in your voice, in ten minutes.</h4>
       </div>
       <div class="workflow">
-        <div class="workflow-label">Research</div>
-        <h4>Monday morning: what moved in your market.</h4>
+        <div class="workflow-tag">Research</div>
+        <h4>Monday: what moved in your market.</h4>
       </div>
     </div>
   </section>
 
   <!-- ===== HOW IT WORKS ===== -->
-  <section class="reveal bordered">
-    <div class="section-label">
-      <span class="lbl-left">04 &mdash; How it works</span>
-      <span>Three steps, no decks</span>
+  <section id="how" class="reveal">
+    <div class="section-head">
+      <div class="section-tag">How it works</div>
+      <h2>Three steps. <span class="grad">No decks.</span></h2>
     </div>
-    <h2>It&rsquo;s <em>deliberately simple</em>.</h2>
 
-    <div class="steps">
-      <div class="step">
-        <span class="step-num">Step 01</span>
-        <h3>A <em>conversation</em>.</h3>
-        <p>Book the Audit. 90 minutes on Zoom. We talk about what you&rsquo;re doing, what&rsquo;s missing, what&rsquo;s worth it.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="num">1</div>
+        <h4>Book the audit</h4>
+        <p>£750. Pay, pick a slot. 90 minutes on Zoom. We talk about what you're doing and what's missing.</p>
       </div>
-      <div class="step">
-        <span class="step-num">Step 02</span>
-        <h3>A <em>written brief</em>.</h3>
-        <p>Within 48 hours. One page. The three workflows worth building. If none are worth it, we say so and refund.</p>
+      <div class="how-step">
+        <div class="num">2</div>
+        <h4>Get the brief</h4>
+        <p>Within 48 hours you get a one-page written plan. Three workflows worth building, in order. If none are worth it, we refund you.</p>
       </div>
-      <div class="step">
-        <span class="step-num">Step 03</span>
-        <h3>The <em>work</em>.</h3>
-        <p>If it&rsquo;s worth doing, we build it &mdash; two-week sprint or monthly companion, your call. Otherwise we part ways.</p>
+      <div class="how-step">
+        <div class="num">3</div>
+        <h4>Build it</h4>
+        <p>Two-week sprint or monthly companion — your call. Or walk away with the plan. No retainer, no pressure.</p>
       </div>
     </div>
   </section>
 
   <!-- ===== FOUNDER ===== -->
-  <section class="founder-section reveal">
-    <div class="section-label">
-      <span class="lbl-left">05 &mdash; Who we are</span>
-      <span>It&rsquo;s one person, actually</span>
+  <section class="reveal">
+    <div class="section-head">
+      <div class="section-tag">Who's behind it</div>
+      <h2>One <span class="grad">person</span>, actually.</h2>
     </div>
 
-    <div class="founder-grid">
-      <!-- Replace `.placeholder` + <div> with <div class="founder-photo"><img src="james.jpg" alt="James Harrop"></div> when photo is ready -->
-      <div class="founder-photo placeholder" aria-label="Placeholder for James Harrop photo"></div>
-
+    <div class="founder">
+      <!-- Replace with <img src="james.jpg" alt="James Harrop"> when available -->
+      <div class="founder-avatar">J</div>
       <div class="founder-note">
-        <div class="mini-label">&mdash; A note from James</div>
-        <blockquote>
-          I&rsquo;m James. I&rsquo;m not a developer. I&rsquo;m the first employee at a VC-backed startup, trained as a copywriter at Saatchi, co-founded a wellness app that raised <em>&pound;1m</em>. I figured out AI properly as <em>a non-technical person</em> &mdash; which means I still remember what the confusion felt like. Unbehind exists because nothing sensible did.
-        </blockquote>
-        <div class="founder-sign">&mdash; <a href="https://harrop.works" target="_blank" rel="noopener">James Harrop</a></div>
+        <div class="meta">James Harrop, founder</div>
+        <p>Non-technical. First employee at a VC-backed startup, ex-Saatchi copywriter, co-founded an NHS-approved app. Figured out AI properly as a non-technical person — which means I still remember the confusion.</p>
+        <div class="credits"><a href="https://harrop.works" target="_blank" rel="noopener">harrop.works</a> · Featured in The Times, Vogue, The Telegraph</div>
       </div>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
-  <section class="cta reveal" id="book">
-    <div class="section-label">
-      <span class="lbl-left">06 &mdash; Getting started</span>
-      <span>One audit. Fixed price.</span>
+  <section id="book" class="cta reveal">
+    <div class="cta-card">
+      <h2>Book the <span class="grad">audit</span>.</h2>
+      <p class="cta-note">£750 flat. 90 minutes on Zoom. A written brief within 48 hours. If nothing's worth building, you get a full refund.</p>
+      <div class="cta-row">
+        <a href="mailto:hello@unbehind.ai?subject=Booking%20the%20Audit" class="btn btn-primary">Book the audit &nbsp;→</a>
+        <a href="mailto:hello@unbehind.ai" class="btn btn-ghost">hello@unbehind.ai</a>
+      </div>
+      <div class="capacity">Taking two new Companion clients in June</div>
     </div>
-    <h2>Book the <em>audit</em>. &pound;750 flat.</h2>
-
-    <div class="cta-row">
-      <!-- TODO: replace with real Stripe Payment Link -->
-      <a href="mailto:hello@unbehind.ai?subject=Booking%20the%20Audit" class="cta-primary">Book the audit &rarr;</a>
-      <a href="mailto:hello@unbehind.ai" class="cta-secondary">Or email hello@unbehind.ai</a>
-    </div>
-
-    <p class="cta-note">No &ldquo;call to discuss the call&rdquo;. Pay, pick a slot, done. If the audit doesn&rsquo;t find anything worth building, you get a full refund.</p>
-    <p class="capacity">Taking two new Companion clients in June.</p>
   </section>
 
 </main>
 
 <footer>
-  <div>&copy; 2026 Unbehind &middot; London</div>
+  <div>© 2026 Unbehind · London</div>
   <div><a href="mailto:hello@unbehind.ai">hello@unbehind.ai</a></div>
 </footer>
 

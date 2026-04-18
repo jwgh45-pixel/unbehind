@@ -1,4 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="8" fill="#F3EEE2"/>
-  <text x="32" y="50" font-family="Georgia, 'Fraunces', serif" font-size="52" font-style="italic" font-weight="300" fill="#8B1A1A" text-anchor="middle">u</text>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="50%" stop-color="#F0ABA1"/>
+      <stop offset="100%" stop-color="#7DD3C0"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0A0A0B"/>
+  <circle cx="32" cy="32" r="13" fill="url(#g)"/>
 </svg>
