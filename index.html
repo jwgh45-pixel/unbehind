@@ -44,11 +44,11 @@
     --border-soft: rgba(255, 255, 255, 0.05);
     --border-hi:   rgba(255, 255, 255, 0.14);
 
-    --grad-1: #A78BFA;   /* soft lavender */
-    --grad-2: #F0ABA1;   /* peach */
-    --grad-3: #7DD3C0;   /* mint */
+    --grad-1: #A78BFA;
+    --grad-2: #F0ABA1;
+    --grad-3: #7DD3C0;
 
-    --accent:      #C7B9FF;   /* subtle lavender-tint for text accents */
+    --accent:      #C7B9FF;
     --accent-mute: #8B7FD1;
   }
 
@@ -68,7 +68,7 @@
     overflow-x: hidden;
   }
 
-  /* ambient gradient wash behind hero — subtle, blurred */
+  /* ambient gradient wash */
   body::before {
     content: '';
     position: fixed;
@@ -180,12 +180,18 @@
   /* ============ HERO ============ */
 
   .hero {
-    padding: 80px 28px 140px;
+    padding: 80px 28px 100px;
     max-width: 1140px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
   }
+
+  .hero-copy { min-width: 0; }
 
   .eyebrow {
     display: inline-flex;
@@ -200,7 +206,7 @@
     border-radius: 999px;
     border: 1px solid var(--border);
     background: rgba(255, 255, 255, 0.02);
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   .eyebrow::before {
@@ -215,12 +221,12 @@
   .hero h1 {
     font-family: 'Geist', sans-serif;
     font-weight: 400;
-    font-size: clamp(36px, 5.2vw, 64px);
+    font-size: clamp(36px, 4.6vw, 60px);
     line-height: 1.05;
     letter-spacing: -0.03em;
     color: var(--ink);
-    max-width: 20ch;
-    margin-bottom: 28px;
+    max-width: 18ch;
+    margin-bottom: 24px;
   }
 
   .hero h1 .grad {
@@ -240,8 +246,8 @@
     font-size: 18px;
     line-height: 1.55;
     color: var(--ink-soft);
-    max-width: 540px;
-    margin-bottom: 40px;
+    max-width: 500px;
+    margin-bottom: 36px;
     font-weight: 400;
   }
 
@@ -253,9 +259,9 @@
   }
 
   .hero-prices {
-    margin-top: 40px;
+    margin-top: 32px;
     display: flex;
-    gap: 28px;
+    gap: 24px;
     flex-wrap: wrap;
     font-family: 'Geist Mono', monospace;
     font-size: 12px;
@@ -266,6 +272,105 @@
   .hero-prices strong {
     color: var(--ink);
     font-weight: 500;
+  }
+
+  /* hero orb — the brand mark, large */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    max-width: 440px;
+    justify-self: end;
+    width: 100%;
+  }
+
+  .hero-orb {
+    position: absolute;
+    inset: 8%;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 28%, #FFE4D9 0%, var(--grad-2) 20%, var(--grad-1) 55%, #4A3A82 85%, #120F29 100%);
+    box-shadow:
+      0 0 120px 12px rgba(167, 139, 250, 0.25),
+      inset -40px -40px 80px rgba(74, 58, 130, 0.5),
+      inset 20px 20px 60px rgba(255, 228, 217, 0.18);
+    animation: orb-drift 14s ease-in-out infinite alternate;
+  }
+
+  .hero-orb::after {
+    content: '';
+    position: absolute;
+    top: 12%;
+    left: 18%;
+    width: 28%;
+    height: 22%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 40% 40%, rgba(255, 255, 255, 0.75), transparent 70%);
+    filter: blur(2px);
+  }
+
+  .hero-orb-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    animation: orb-rotate 40s linear infinite;
+  }
+  .hero-orb-ring.inner {
+    inset: 16%;
+    border-color: rgba(255, 255, 255, 0.05);
+    animation-duration: 26s;
+    animation-direction: reverse;
+  }
+
+  @keyframes orb-drift {
+    0%   { transform: translateY(-4px); }
+    100% { transform: translateY(6px); }
+  }
+  @keyframes orb-rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* ============ CREDENTIALS STRIP ============ */
+
+  .credentials-strip {
+    padding: 28px 28px;
+    max-width: 1140px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .credentials-label {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    flex-shrink: 0;
+  }
+
+  .credentials-row {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  .credentials-row span {
+    font-style: italic;
+    font-weight: 400;
   }
 
   /* ============ SECTION BASE ============ */
@@ -280,7 +385,7 @@
 
   .section-head {
     max-width: 680px;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
   }
 
   .section-tag {
@@ -330,7 +435,7 @@
     max-width: 560px;
   }
 
-  /* ============ ACTUALLY (anti-hype) ============ */
+  /* ============ ACTUALLY ============ */
 
   .actually-grid {
     display: grid;
@@ -391,7 +496,7 @@
     padding: 28px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
     transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
@@ -460,11 +565,41 @@
     font-size: 14px;
     line-height: 1.55;
     color: var(--ink-soft);
+  }
+
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 6px;
+    border-top: 1px solid var(--border);
     flex-grow: 1;
   }
 
+  .service-list li {
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: var(--ink);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .service-list li::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(125, 211, 192, 0.16);
+    flex-shrink: 0;
+    margin-top: 3px;
+    position: relative;
+    background-image: radial-gradient(circle, var(--grad-3) 2px, transparent 3px);
+  }
+
   .service-cta {
-    margin-top: 8px;
+    margin-top: 4px;
     font-family: 'Geist', sans-serif;
     font-size: 13px;
     font-weight: 500;
@@ -483,6 +618,62 @@
     background: var(--ink);
     color: var(--bg);
     border-color: var(--ink);
+  }
+
+  /* ============ GUARANTEE ============ */
+
+  .guarantee {
+    margin-top: 48px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 32px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .guarantee::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--grad-1), var(--grad-2), var(--grad-3));
+  }
+
+  .guarantee-seal {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(125, 211, 192, 0.35), rgba(167, 139, 250, 0.18));
+    border: 1px solid rgba(125, 211, 192, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    font-family: 'Geist Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .guarantee p {
+    font-size: 16px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  .guarantee p strong {
+    font-weight: 500;
+  }
+  .guarantee p span.light {
+    color: var(--ink-soft);
+    display: block;
+    font-size: 14px;
+    margin-top: 2px;
   }
 
   /* ============ WORKFLOWS ============ */
@@ -535,46 +726,69 @@
     color: var(--ink);
   }
 
-  /* ============ HOW ============ */
+  /* ============ SPRINT TIMELINE ============ */
 
-  .how-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .how-step {
-    padding: 0;
-  }
-
-  .how-step .num {
-    width: 28px;
-    height: 28px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--border-hi);
-    font-family: 'Geist Mono', monospace;
-    font-size: 12px;
-    color: var(--ink);
+  .timeline {
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 18px;
+    flex-direction: column;
+    gap: 0;
   }
 
-  .how-step h4 {
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    left: 16px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--grad-1), var(--grad-2), var(--grad-3));
+    opacity: 0.35;
+  }
+
+  .timeline-item {
+    padding: 18px 0 18px 52px;
+    position: relative;
+    border-top: 1px solid var(--border-soft);
+  }
+  .timeline-item:first-child { border-top: none; padding-top: 0; }
+
+  .timeline-marker {
+    position: absolute;
+    left: 8px;
+    top: 24px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+  .timeline-item:first-child .timeline-marker { top: 6px; }
+
+  .timeline-item .day {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .timeline-item h4 {
     font-family: 'Geist', sans-serif;
     font-weight: 500;
     font-size: 17px;
     letter-spacing: -0.015em;
-    margin-bottom: 8px;
     color: var(--ink);
+    margin-bottom: 6px;
   }
 
-  .how-step p {
-    font-size: 14px;
+  .timeline-item p {
+    font-size: 14.5px;
     color: var(--ink-soft);
     line-height: 1.55;
+    max-width: 640px;
   }
 
   /* ============ FOUNDER ============ */
@@ -585,23 +799,23 @@
     border-radius: 20px;
     padding: 40px;
     display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 32px;
-    align-items: center;
-    max-width: 860px;
+    grid-template-columns: 140px 1fr;
+    gap: 36px;
+    align-items: flex-start;
+    max-width: 920px;
     margin: 0 auto;
   }
 
   .founder-avatar {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 999px;
     background: linear-gradient(135deg, var(--grad-1) 0%, var(--grad-2) 60%, var(--grad-3) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Geist', sans-serif;
-    font-size: 54px;
+    font-size: 62px;
     font-weight: 300;
     color: var(--bg);
     letter-spacing: -0.02em;
@@ -628,29 +842,102 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--ink-mute);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+  }
+
+  .founder-name {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 16px;
   }
 
   .founder-note p {
-    font-size: 16px;
+    font-size: 15.5px;
     line-height: 1.55;
     color: var(--ink);
+    margin-bottom: 18px;
   }
 
-  .founder-note .credits {
-    margin-top: 14px;
+  .founder-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .chip {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+  }
+
+  .founder-links {
     font-size: 13px;
     color: var(--ink-mute);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
-  .founder-note .credits a {
+  .founder-links a {
     color: var(--ink-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     border-bottom: 1px solid var(--border-hi);
-    transition: all 0.2s ease;
+    padding-bottom: 2px;
+    transition: all 0.2s;
   }
-  .founder-note .credits a:hover {
+  .founder-links a:hover {
     color: var(--ink);
-    border-color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  /* ============ FAQ ============ */
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 48px;
+  }
+
+  .faq-item h4 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .faq-item h4::before {
+    content: '';
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(167, 139, 250, 0.12);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    margin-top: 2px;
+    background-image: radial-gradient(circle, var(--grad-1) 3px, transparent 4px);
+  }
+
+  .faq-item p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    padding-left: 28px;
   }
 
   /* ============ CTA ============ */
@@ -778,28 +1065,40 @@
 
   /* ============ RESPONSIVE ============ */
 
+  @media (max-width: 960px) {
+    .hero { grid-template-columns: 1fr; gap: 56px; padding-bottom: 72px; }
+    .hero-visual { max-width: 320px; margin: 0 auto; }
+  }
+
   @media (max-width: 880px) {
     .actually-grid { grid-template-columns: 1fr; }
     .services { grid-template-columns: 1fr; }
     .workflows { grid-template-columns: 1fr 1fr; }
-    .how-grid { grid-template-columns: 1fr; gap: 32px; }
-    .founder { grid-template-columns: 1fr; text-align: left; padding: 32px; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .founder { grid-template-columns: 1fr; gap: 24px; padding: 32px; text-align: left; }
     .founder-avatar { width: 96px; height: 96px; font-size: 44px; }
   }
 
   @media (max-width: 560px) {
     body { font-size: 15px; }
-    nav.top, .hero, section, footer { padding-left: 20px; padding-right: 20px; }
+    nav.top, .hero, section, footer, .credentials-strip {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
     nav.top { padding-top: 18px; padding-bottom: 18px; }
     .nav-right { gap: 10px; }
     .nav-link { display: none; }
 
-    .hero { padding-top: 48px; padding-bottom: 72px; }
+    .hero { padding-top: 48px; padding-bottom: 56px; gap: 40px; }
     .hero h1 { font-size: clamp(32px, 8vw, 44px); }
     .hero-sub { font-size: 16px; }
+    .hero-visual { max-width: 240px; }
+
+    .credentials-strip { gap: 20px; padding: 20px 20px; justify-content: flex-start; }
+    .credentials-row { gap: 20px; font-size: 13px; }
 
     section { padding: 72px 20px; }
-    .section-head { margin-bottom: 36px; }
+    .section-head { margin-bottom: 32px; }
 
     .workflows { grid-template-columns: 1fr; }
 
@@ -807,6 +1106,12 @@
     .cta-card { padding: 44px 24px; }
 
     .hero-prices { gap: 16px; font-size: 11px; }
+
+    .guarantee { flex-direction: column; align-items: flex-start; gap: 16px; padding: 24px; }
+
+    .timeline::before { left: 10px; }
+    .timeline-item { padding-left: 40px; }
+    .timeline-marker { left: 2px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -816,6 +1121,7 @@
       transition-duration: 0.01ms !important;
     }
     .reveal { opacity: 1 !important; transform: none !important; }
+    .hero-orb, .hero-orb-ring { animation: none !important; }
   }
 </style>
 </head>
@@ -826,6 +1132,7 @@
   <div class="nav-right">
     <a href="#services" class="nav-link">Pricing</a>
     <a href="#how" class="nav-link">How it works</a>
+    <a href="#faq" class="nav-link">FAQ</a>
     <a href="#book" class="btn btn-primary">Book the audit</a>
   </div>
 </nav>
@@ -834,23 +1141,44 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero">
-    <div class="eyebrow">For seed-stage founders</div>
+    <div class="hero-copy">
+      <div class="eyebrow">For seed-stage founders</div>
 
-    <h1>You don't need an AI <span class="grad">strategy</span>. You need a <span class="grad">Thursday afternoon</span>.</h1>
+      <h1>You don't need an AI <span class="grad">strategy</span>. You need a <span class="grad">Thursday afternoon</span>.</h1>
 
-    <p class="hero-sub">Unbehind is a small studio that builds the three or four AI workflows that actually save you a day a week. That's the whole product.</p>
+      <p class="hero-sub">Unbehind is a small studio that builds the three or four AI workflows that actually save you a day a week. That's the whole product.</p>
 
-    <div class="hero-ctas">
-      <a href="#book" class="btn btn-primary">Book the audit &nbsp;→</a>
-      <a href="#services" class="btn btn-ghost">See what's included</a>
+      <div class="hero-ctas">
+        <a href="#book" class="btn btn-primary">Book the audit &nbsp;→</a>
+        <a href="#services" class="btn btn-ghost">See what's included</a>
+      </div>
+
+      <div class="hero-prices">
+        <span><strong>£750</strong> Audit</span>
+        <span><strong>£3,500</strong> Set-Up</span>
+        <span><strong>£1,500</strong>/mo Companion</span>
+      </div>
     </div>
 
-    <div class="hero-prices">
-      <span><strong>£750</strong> Audit</span>
-      <span><strong>£3,500</strong> Set-Up</span>
-      <span><strong>£1,500</strong>/mo Companion</span>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-orb-ring"></div>
+      <div class="hero-orb-ring inner"></div>
+      <div class="hero-orb"></div>
     </div>
   </section>
+
+  <!-- ===== CREDENTIALS STRIP ===== -->
+  <div class="credentials-strip">
+    <div class="credentials-label">Built by someone with form</div>
+    <div class="credentials-row">
+      <span>Saatchi &amp; Saatchi</span>
+      <span>Founders Factory</span>
+      <span>The Times</span>
+      <span>Vogue</span>
+      <span>Financial Times</span>
+      <span>The Telegraph</span>
+    </div>
+  </div>
 
   <!-- ===== ACTUALLY ===== -->
   <section class="reveal">
@@ -893,15 +1221,27 @@
         <div class="service-tag">One-off</div>
         <h3>The Audit</h3>
         <div class="service-price">£750</div>
-        <p>A 90-minute conversation and a one-page written brief within 48 hours. You leave knowing which workflows to build and in what order.</p>
-        <a href="#book" class="service-cta">Book →</a>
+        <p>A 90-minute conversation. A written brief within 48 hours.</p>
+        <ul class="service-list">
+          <li>90-minute Zoom call</li>
+          <li>One-page written brief</li>
+          <li>Three workflows, prioritised</li>
+          <li>Full refund if none are worth building</li>
+        </ul>
+        <a href="#book" class="service-cta">Book the audit →</a>
       </div>
 
       <div class="service featured">
         <div class="service-tag">Two-week sprint</div>
         <h3>The Set-Up</h3>
         <div class="service-price">£3,500</div>
-        <p>Three workflows live in your stack by the Friday of week two. Built, documented, and handed over. No maintenance contract required.</p>
+        <p>Three workflows live in your stack, documented, by the Friday of week two.</p>
+        <ul class="service-list">
+          <li>Three workflows built &amp; live</li>
+          <li>Full written documentation</li>
+          <li>Team handover call</li>
+          <li>No retainer required after</li>
+        </ul>
         <a href="#book" class="service-cta">Start with the audit →</a>
       </div>
 
@@ -909,10 +1249,21 @@
         <div class="service-tag">Monthly</div>
         <h3>The Companion</h3>
         <div class="service-price">£1,500 <span class="unit">/ mo</span></div>
-        <p>One call a week, one new workflow every month. Judgement on what's hype and what's useful. Cancel any time.</p>
+        <p>A second brain on AI, without the overhead of hiring one.</p>
+        <ul class="service-list">
+          <li>Weekly 45-minute call</li>
+          <li>One new workflow per month</li>
+          <li>Ongoing judgement &amp; triage</li>
+          <li>Cancel any time, no notice</li>
+        </ul>
         <a href="#book" class="service-cta">Start with the audit →</a>
       </div>
 
+    </div>
+
+    <div class="guarantee">
+      <div class="guarantee-seal">✓</div>
+      <p><strong>If nothing's worth building, you don't pay.</strong><span class="light">The Audit comes with a full refund if we can't find three workflows that save you meaningful time.</span></p>
     </div>
   </section>
 
@@ -921,7 +1272,7 @@
     <div class="section-head">
       <div class="section-tag">For example</div>
       <h2>The <span class="grad">small, useful bit</span>.</h2>
-      <p class="section-lead">Six real things founders ask for, every month.</p>
+      <p class="section-lead">Six things founders ask us to build, every month.</p>
     </div>
 
     <div class="workflows">
@@ -952,28 +1303,48 @@
     </div>
   </section>
 
-  <!-- ===== HOW IT WORKS ===== -->
+  <!-- ===== SPRINT TIMELINE ===== -->
   <section id="how" class="reveal">
     <div class="section-head">
-      <div class="section-tag">How it works</div>
-      <h2>Three steps. <span class="grad">No decks.</span></h2>
+      <div class="section-tag">The Set-Up sprint, day by day</div>
+      <h2>Two weeks. <span class="grad">No decks. No overrun.</span></h2>
+      <p class="section-lead">Every Set-Up follows the same shape. You know what&rsquo;s happening and when.</p>
     </div>
 
-    <div class="how-grid">
-      <div class="how-step">
-        <div class="num">1</div>
-        <h4>Book the audit</h4>
-        <p>£750. Pay, pick a slot. 90 minutes on Zoom. We talk about what you're doing and what's missing.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Day 01 &middot; Monday</div>
+        <h4>Kickoff &amp; audit findings</h4>
+        <p>90-minute kickoff. We confirm the three workflows, the stack they&rsquo;ll live in, the people they&rsquo;ll serve. You get the written brief in your inbox that afternoon.</p>
       </div>
-      <div class="how-step">
-        <div class="num">2</div>
-        <h4>Get the brief</h4>
-        <p>Within 48 hours you get a one-page written plan. Three workflows worth building, in order. If none are worth it, we refund you.</p>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Days 02&ndash;04 &middot; Week 1</div>
+        <h4>First workflow live</h4>
+        <p>Usually the one with the biggest day-to-day impact (inbox, meeting prep, or CRM). Built end-to-end in your own tools. You&rsquo;re using it by Thursday.</p>
       </div>
-      <div class="how-step">
-        <div class="num">3</div>
-        <h4>Build it</h4>
-        <p>Two-week sprint or monthly companion — your call. Or walk away with the plan. No retainer, no pressure.</p>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Days 05&ndash;08 &middot; Week 2</div>
+        <h4>Workflows two &amp; three</h4>
+        <p>Built in parallel. Short daily checkpoints over Loom or Slack &mdash; no extra meetings unless we hit a choice point that needs you.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Day 09 &middot; Thursday</div>
+        <h4>Team handover</h4>
+        <p>60-minute walkthrough for anyone on your team who&rsquo;ll run them. Written docs covering every prompt, API key, integration and fallback.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Day 10 &middot; Friday</div>
+        <h4>Live &amp; handed over</h4>
+        <p>Three workflows running in your stack. You own them. We&rsquo;re available for two weeks of light support, after which you either upgrade to the Companion or we wrap.</p>
       </div>
     </div>
   </section>
@@ -981,7 +1352,7 @@
   <!-- ===== FOUNDER ===== -->
   <section class="reveal">
     <div class="section-head">
-      <div class="section-tag">Who's behind it</div>
+      <div class="section-tag">Who&rsquo;s behind it</div>
       <h2>One <span class="grad">person</span>, actually.</h2>
     </div>
 
@@ -989,9 +1360,55 @@
       <!-- Replace with <img src="james.jpg" alt="James Harrop"> when available -->
       <div class="founder-avatar">J</div>
       <div class="founder-note">
-        <div class="meta">James Harrop, founder</div>
-        <p>Non-technical. First employee at a VC-backed startup, ex-Saatchi copywriter, co-founded an NHS-approved app. Figured out AI properly as a non-technical person — which means I still remember the confusion.</p>
-        <div class="credits"><a href="https://harrop.works" target="_blank" rel="noopener">harrop.works</a> · Featured in The Times, Vogue, The Telegraph</div>
+        <div class="meta">Founder</div>
+        <div class="founder-name">James Harrop</div>
+        <p>Non-technical. First employee at a VC-backed startup (<a href="https://regeno.farm" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--border-hi)">Regeno</a>), ex-art-director at Saatchi &amp; Saatchi, co-founded an NHS-approved wellness app that raised &pound;1m from 25+ investors. I figured out AI properly as a non-technical person &mdash; which means I still remember what the confusion felt like. Unbehind exists because nothing sensible did.</p>
+        <div class="founder-chips">
+          <span class="chip">Saatchi &amp; Saatchi</span>
+          <span class="chip">Founders Factory</span>
+          <span class="chip">Watford Advertising</span>
+          <span class="chip">Minderful &mdash; &pound;1m raised</span>
+          <span class="chip">NHS-approved</span>
+        </div>
+        <div class="founder-links">
+          <a href="https://harrop.works" target="_blank" rel="noopener">harrop.works ↗</a>
+          <a href="mailto:hello@unbehind.ai">hello@unbehind.ai</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="reveal">
+    <div class="section-head">
+      <div class="section-tag">What you&rsquo;re probably thinking</div>
+      <h2>The <span class="grad">honest</span> answers.</h2>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>What if none of the workflows are worth it?</h4>
+        <p>You get a full refund. That&rsquo;s the only guarantee anyone in this category can honestly make, so we make it. It also almost never happens &mdash; there&rsquo;s always something.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Don&rsquo;t I just need ChatGPT?</h4>
+        <p>ChatGPT is great for talking to. It&rsquo;s not great for running your inbox while you sleep, or updating your CRM from a call transcript. Those need building. That&rsquo;s what we do.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What tools do you use?</h4>
+        <p>Whatever fits: Claude, GPT, Zapier, Make, n8n, Gmail &amp; Calendar APIs, Attio, Notion, plus custom scripts where helpful. We build in your stack, not a bespoke one.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is this one person, really?</h4>
+        <p>Yes. Which means bookings are limited. It also means you always deal with the person who built the thing &mdash; not an account manager, not a junior, not an agency layer.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Who is this not for?</h4>
+        <p>If you&rsquo;ve got an engineering team already wiring AI into your product, this isn&rsquo;t for you &mdash; you need a fractional AI CTO. If you&rsquo;re pre-product and want a &ldquo;strategy&rdquo;, also no. This is for founders who want fewer hours spent on the boring stuff.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I talk first before paying for the audit?</h4>
+        <p>No. The &pound;750 buys the conversation and the brief. It filters out people who aren&rsquo;t serious and pays for the thinking. If you don&rsquo;t want to pay for a conversation about AI, you probably don&rsquo;t need one.</p>
       </div>
     </div>
   </section>
