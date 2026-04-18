@@ -112,18 +112,18 @@
   .wordmark {
     font-family: 'Geist', sans-serif;
     font-weight: 500;
-    font-size: 18px;
-    letter-spacing: -0.015em;
+    font-size: 24px;
+    letter-spacing: -0.02em;
     color: var(--ink);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
   }
 
   .wordmark::before {
     content: '';
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background: conic-gradient(from 180deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
     filter: saturate(0.9) brightness(1.05);
@@ -230,6 +230,10 @@
     -webkit-text-fill-color: transparent;
     font-style: italic;
     font-weight: 400;
+    display: inline-block;
+    padding: 0.05em 0.12em 0.05em 0.02em;
+    margin: -0.05em -0.12em -0.05em -0.02em;
+    line-height: 1.12;
   }
 
   .hero-sub {
@@ -313,6 +317,10 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-style: italic;
+    display: inline-block;
+    padding: 0.05em 0.12em 0.05em 0.02em;
+    margin: -0.05em -0.12em -0.05em -0.02em;
+    line-height: 1.18;
   }
 
   .section-lead {
