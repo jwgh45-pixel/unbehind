@@ -1,0 +1,16 @@
+{
+  "name": "unbehind",
+  "version": "1.0.0",
+  "description": "Landing page for unbehind.ai - a small studio helping seed-stage founders figure out AI.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "og": "node scripts/generate-og.mjs",
+    "dev": "python3 -m http.server 8000"
+  },
+  "author": "James Harrop",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "playwright": "^1.54.0"
+  }
+}
