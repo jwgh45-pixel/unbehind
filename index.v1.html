@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unbehind — You're not behind. You're just lost. A private cohort for solo operators figuring out AI.</title>
+<title>Unbehind — You don't need an AI strategy.</title>
 
-<meta name="description" content="You bookmark Notion AI on Monday and sign up for Claude on Tuesday. None of it sticks. That's not a you problem — most AI teaching is written by developers, for developers. Unbehind shows solo operators what to actually build. £250–£2,500/mo.">
+<meta name="description" content="A small studio that builds the three or four AI workflows that actually save you a day a week. For seed-stage founders.">
 <link rel="canonical" href="https://unbehind.ai">
 
-<meta property="og:title" content="Unbehind — You're not behind. You're just lost.">
-<meta property="og:description" content="A private cohort for solo operators who keep starting AI tutorials and finishing none. Three tiers from £250/mo.">
+<meta property="og:title" content="Unbehind — You don't need an AI strategy. You need a Thursday afternoon.">
+<meta property="og:description" content="A small studio that builds the three or four AI workflows that actually save you a day a week. For seed-stage founders.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://unbehind.ai">
 <meta property="og:image" content="https://unbehind.ai/og.png">
@@ -18,8 +18,8 @@
 <meta property="og:site_name" content="Unbehind">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Unbehind — You're not behind. You're just lost.">
-<meta name="twitter:description" content="A private cohort for solo operators who keep starting AI tutorials and finishing none. Three tiers from £250/mo.">
+<meta name="twitter:title" content="Unbehind — You don't need an AI strategy. You need a Thursday afternoon.">
+<meta name="twitter:description" content="A small studio that builds the three or four AI workflows that actually save you a day a week.">
 <meta name="twitter:image" content="https://unbehind.ai/og.png">
 
 <meta name="theme-color" content="#0A0A0B">
@@ -274,11 +274,10 @@
     font-weight: 500;
   }
 
-  /* hero visual — planet */
+  /* hero visual — mocked audit deliverable card */
   .hero-visual {
     position: relative;
     max-width: 440px;
-    aspect-ratio: 1;
     justify-self: end;
     width: 100%;
   }
@@ -293,54 +292,6 @@
     filter: blur(50px);
     pointer-events: none;
     z-index: 0;
-  }
-
-  .hero-orb {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 64%;
-    aspect-ratio: 1;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background:
-      radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.22), transparent 50%),
-      conic-gradient(from 210deg,
-        var(--grad-1) 0%,
-        var(--grad-2) 35%,
-        var(--grad-3) 65%,
-        var(--grad-1) 100%);
-    box-shadow:
-      0 0 90px rgba(167, 139, 250, 0.35),
-      0 0 50px rgba(240, 171, 161, 0.25),
-      inset 0 -36px 70px rgba(0, 0, 0, 0.42),
-      inset 28px 22px 60px rgba(255, 255, 255, 0.08);
-    z-index: 1;
-    animation: orb-spin 60s linear infinite;
-  }
-
-  .hero-orb-ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 96%;
-    aspect-ratio: 1;
-    transform: translate(-50%, -50%) rotate(-18deg);
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .hero-orb-ring.inner {
-    width: 78%;
-    transform: translate(-50%, -50%) rotate(22deg);
-    border-color: rgba(255, 255, 255, 0.06);
-  }
-
-  @keyframes orb-spin {
-    from { filter: saturate(0.95) brightness(1.05) hue-rotate(0deg); }
-    to   { filter: saturate(0.95) brightness(1.05) hue-rotate(360deg); }
   }
 
   .audit-card {
@@ -1265,10 +1216,10 @@
 <nav class="top">
   <a href="/" class="wordmark">Unbehind</a>
   <div class="nav-right">
-    <a href="#how" class="nav-link">How it works</a>
     <a href="#services" class="nav-link">Pricing</a>
+    <a href="#how" class="nav-link">How it works</a>
     <a href="#faq" class="nav-link">FAQ</a>
-    <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application" class="btn btn-primary">Apply</a>
+    <a href="#book" class="btn btn-primary">Book the audit</a>
   </div>
 </nav>
 
@@ -1277,15 +1228,21 @@
   <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="hero-copy">
-      <div class="eyebrow">For solo operators figuring out AI</div>
+      <div class="eyebrow">For seed-stage founders</div>
 
-      <h1>You&rsquo;re not behind.<br/>You&rsquo;re just <span class="grad">lost.</span></h1>
+      <h1>You don't need an AI <span class="grad">strategy</span>. You need a <span class="grad">Thursday afternoon</span>.</h1>
 
-      <p class="hero-sub">AI teaching is written by developers, for developers. Unbehind shows solo operators what to actually ship &mdash; one Thursday at a time.</p>
+      <p class="hero-sub">Unbehind is a small studio that builds the three or four AI workflows that actually save you a day a week. That's the whole product.</p>
 
       <div class="hero-ctas">
-        <a href="#services" class="btn btn-primary">See the three tiers &nbsp;→</a>
-        <a href="#how" class="btn btn-ghost">How it works</a>
+        <a href="#book" class="btn btn-primary">Book the audit &nbsp;→</a>
+        <a href="#services" class="btn btn-ghost">See what's included</a>
+      </div>
+
+      <div class="hero-prices">
+        <span><strong>£750</strong> Audit</span>
+        <span><strong>£3,500</strong> Set-Up</span>
+        <span><strong>£1,500</strong>/mo Companion</span>
       </div>
     </div>
 
@@ -1298,102 +1255,183 @@
 
   <!-- ===== CREDENTIALS STRIP ===== -->
   <div class="credentials-strip">
-    <div class="credentials-label">Built solo with Claude Code. No engineers.</div>
+    <div class="credentials-label">Built by someone with form</div>
     <div class="credentials-row">
-      <span><a href="https://adhouse.ai" target="_blank" rel="noopener" style="color:inherit">adhouse.ai</a></span>
-      <span><a href="https://williamharrop.com" target="_blank" rel="noopener" style="color:inherit">williamharrop.com</a></span>
-      <span><a href="https://jamesharrop.co" target="_blank" rel="noopener" style="color:inherit">jamesharrop.co</a></span>
-      <span>Regeno QA</span>
-      <span>The ad factory</span>
-      <span>This site</span>
+      <span>Saatchi &amp; Saatchi</span>
+      <span>Founders Factory</span>
+      <span>The Times</span>
+      <span>Vogue</span>
+      <span>Financial Times</span>
+      <span>The Telegraph</span>
     </div>
   </div>
 
-  <!-- ===== HOW IT WORKS ===== -->
-  <section id="how" class="reveal">
+  <!-- ===== ACTUALLY ===== -->
+  <section class="reveal">
     <div class="section-head">
-      <div class="section-tag">How it works</div>
-      <h2>One Thursday <span class="grad">a week</span>.</h2>
+      <div class="section-tag">Just so we're clear</div>
+      <h2>What Unbehind <span class="grad">isn't</span>.</h2>
     </div>
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="day">Thursday, 8pm UK</div>
-        <h4>Live build session</h4>
-        <p>I open Claude Code and build something real. You watch, ask, copy the prompt.</p>
+    <div class="actually-grid">
+      <div class="actually-card">
+        <div class="actually-cross">×</div>
+        <p>Not an <strong>AI agency</strong>. <span class="light">No autonomous agents, bespoke models, or five-year transformation decks.</span></p>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="day">Friday morning</div>
-        <h4>You build the same thing</h4>
-        <p>In your own business. Or you don&rsquo;t. Either way, you&rsquo;ve seen how it works.</p>
+      <div class="actually-card">
+        <div class="actually-cross">×</div>
+        <p>Not a <strong>fractional CTO</strong>. <span class="light">If you need one, we know two good ones and will introduce you.</span></p>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="day">Between sessions</div>
-        <h4>Private Slack</h4>
-        <p>Drop your half-finished thing in. Unblocked within the hour.</p>
+      <div class="actually-card">
+        <div class="actually-cross">×</div>
+        <p>Not <strong>hype-led</strong>. <span class="light">Most of what the category sells is noise and we know it.</span></p>
+      </div>
+      <div class="actually-card">
+        <div class="actually-cross">×</div>
+        <p>Not a <strong>team</strong>. <span class="light">One person, a few good tools. It's deliberate.</span></p>
       </div>
     </div>
   </section>
-
 
   <!-- ===== SERVICES ===== -->
   <section id="services" class="reveal">
     <div class="section-head">
       <div class="section-tag">Pricing</div>
-      <h2>Three <span class="grad">tiers</span>. Pick what fits.</h2>
+      <h2>Three ways in. <span class="grad">Fixed prices. Shown.</span></h2>
+      <p class="section-lead">The Audit is the entry point. If it doesn't find anything worth building, you get a refund.</p>
     </div>
 
-    <div class="services" style="grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px;">
+    <div class="services">
 
-      <!-- TIER 1 -->
       <div class="service">
-        <div class="service-tag">Tier 1</div>
-        <h3>&pound;250<span style="font-size:18px;color:var(--ink-soft);font-weight:400">/mo</span></h3>
-        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">Cohort</div>
+        <div class="service-tag">One-off</div>
+        <h3>The Audit</h3>
+        <div class="service-price">£750</div>
+        <p>A 90-minute conversation. A written brief within 48 hours.</p>
         <ul class="service-list">
-          <li>Live build session every Thursday</li>
-          <li>Private Slack</li>
-          <li>Cancel any time</li>
+          <li>90-minute Zoom call</li>
+          <li>One-page written brief</li>
+          <li>Three workflows, prioritised</li>
+          <li>Full refund if none are worth building</li>
         </ul>
-        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application" class="service-cta">Apply &rarr;</a>
+        <a href="#book" class="service-cta">Book the audit →</a>
       </div>
 
-      <!-- TIER 2 - FEATURED -->
       <div class="service featured">
-        <div class="service-tag">Most chosen</div>
-        <h3>&pound;750<span style="font-size:18px;color:var(--ink-soft);font-weight:400">/mo</span></h3>
-        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">Cohort + Coach</div>
+        <div class="service-tag">Two-week sprint</div>
+        <h3>The Set-Up</h3>
+        <div class="service-price">£3,500</div>
+        <p>Three workflows live in your stack, documented, by the Friday of week two.</p>
         <ul class="service-list">
-          <li>Everything in Cohort</li>
-          <li>Monthly 1:1 with me</li>
-          <li>Priority Slack</li>
+          <li>Three workflows built &amp; live</li>
+          <li>Full written documentation</li>
+          <li>Team handover call</li>
+          <li>No retainer required after</li>
         </ul>
-        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application" class="service-cta">Apply &rarr;</a>
+        <a href="#book" class="service-cta">Start with the audit →</a>
       </div>
 
-      <!-- TIER 3 -->
       <div class="service">
-        <div class="service-tag">Capped at 6</div>
-        <h3>&pound;2,500<span style="font-size:18px;color:var(--ink-soft);font-weight:400">/mo</span></h3>
-        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">Build with me</div>
+        <div class="service-tag">Monthly</div>
+        <h3>The Companion</h3>
+        <div class="service-price">£1,500 <span class="unit">/ mo</span></div>
+        <p>A second brain on AI, without the overhead of hiring one.</p>
         <ul class="service-list">
-          <li>Everything in Cohort + Coach</li>
-          <li>One full day a month, just us</li>
-          <li>We ship the thing together</li>
+          <li>Weekly 45-minute call</li>
+          <li>One new workflow per month</li>
+          <li>Ongoing judgement &amp; triage</li>
+          <li>Cancel any time, no notice</li>
         </ul>
-        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application" class="service-cta">Apply &rarr;</a>
+        <a href="#book" class="service-cta">Start with the audit →</a>
       </div>
 
     </div>
 
     <div class="guarantee">
-      <div class="guarantee-seal">&check;</div>
-      <p><strong>First-cohort prices lock for life.</strong><span class="light">30 founders, hand-picked.</span></p>
+      <div class="guarantee-seal">✓</div>
+      <p><strong>If nothing's worth building, you don't pay.</strong><span class="light">The Audit comes with a full refund if we can't find three workflows that save you meaningful time.</span></p>
+    </div>
+  </section>
+
+  <!-- ===== WORKFLOWS ===== -->
+  <section class="reveal">
+    <div class="section-head">
+      <div class="section-tag">For example</div>
+      <h2>The <span class="grad">small, useful bit</span>.</h2>
+      <p class="section-lead">Six things founders ask us to build, every month.</p>
+    </div>
+
+    <div class="workflows">
+      <div class="workflow">
+        <div class="workflow-tag">Inbox</div>
+        <h4>Your inbox, answered by 9am. Not by you.</h4>
+      </div>
+      <div class="workflow">
+        <div class="workflow-tag">Meetings</div>
+        <h4>Never walk into a meeting cold again.</h4>
+      </div>
+      <div class="workflow">
+        <div class="workflow-tag">Pipeline</div>
+        <h4>Stop updating the CRM. It updates itself.</h4>
+      </div>
+      <div class="workflow">
+        <div class="workflow-tag">Writing</div>
+        <h4>Emails that sound like you. Because you wrote them, once.</h4>
+      </div>
+      <div class="workflow">
+        <div class="workflow-tag">Content</div>
+        <h4>A LinkedIn post, in your voice, in ten minutes.</h4>
+      </div>
+      <div class="workflow">
+        <div class="workflow-tag">Research</div>
+        <h4>Monday: what moved in your market.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPRINT TIMELINE ===== -->
+  <section id="how" class="reveal">
+    <div class="section-head">
+      <div class="section-tag">The Set-Up sprint, day by day</div>
+      <h2>Two weeks. <span class="grad">No decks. No overrun.</span></h2>
+      <p class="section-lead">Every Set-Up follows the same shape. You know what&rsquo;s happening and when.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Day 01 &middot; Monday</div>
+        <h4>Kickoff &amp; audit findings</h4>
+        <p>90-minute kickoff. We confirm the three workflows, the stack they&rsquo;ll live in, the people they&rsquo;ll serve. You get the written brief in your inbox that afternoon.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Days 02&ndash;04 &middot; Week 1</div>
+        <h4>First workflow live</h4>
+        <p>Usually the one with the biggest day-to-day impact (inbox, meeting prep, or CRM). Built end-to-end in your own tools. You&rsquo;re using it by Thursday.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Days 05&ndash;08 &middot; Week 2</div>
+        <h4>Workflows two &amp; three</h4>
+        <p>Built in parallel. Short daily checkpoints over Loom or Slack &mdash; no extra meetings unless we hit a choice point that needs you.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Day 09 &middot; Thursday</div>
+        <h4>Team handover</h4>
+        <p>60-minute walkthrough for anyone on your team who&rsquo;ll run them. Written docs covering every prompt, API key, integration and fallback.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Day 10 &middot; Friday</div>
+        <h4>Live &amp; handed over</h4>
+        <p>Three workflows running in your stack. You own them. We&rsquo;re available for two weeks of light support, after which you either upgrade to the Companion or we wrap.</p>
+      </div>
     </div>
   </section>
 
@@ -1405,21 +1443,21 @@
     </div>
 
     <div class="founder">
+      <!-- Replace with <img src="james.jpg" alt="James Harrop"> when available -->
       <div class="founder-avatar">J</div>
       <div class="founder-note">
-        <div class="meta">Founder &middot; the only one</div>
+        <div class="meta">Founder</div>
         <div class="founder-name">James Harrop</div>
-        <p>Saatchi-trained creative. Started <strong>Eddie Harrop</strong> (Net-A-Porter, Vogue) and <strong>Minderful</strong> (Apple App of the Day, &pound;1m raised). Last year I couldn&rsquo;t code. This year I shipped seven products solo with Claude Code. <strong>I&rsquo;m not exceptional. I&rsquo;m just early.</strong></p>
+        <p>Non-technical. First employee at a VC-backed startup (<a href="https://regeno.farm" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--border-hi)">Regeno</a>), ex-art-director at Saatchi &amp; Saatchi, co-founded an NHS-approved wellness app that raised &pound;1m from 25+ investors. I figured out AI properly as a non-technical person &mdash; which means I still remember what the confusion felt like. Unbehind exists because nothing sensible did.</p>
         <div class="founder-chips">
           <span class="chip">Saatchi &amp; Saatchi</span>
-          <span class="chip">Net-A-Porter</span>
-          <span class="chip">Apple App of the Day</span>
-          <span class="chip">&pound;1m raised</span>
+          <span class="chip">Founders Factory</span>
+          <span class="chip">Watford Advertising</span>
+          <span class="chip">Minderful &mdash; &pound;1m raised</span>
           <span class="chip">NHS-approved</span>
-          <span class="chip">Non-technical</span>
         </div>
         <div class="founder-links">
-          <a href="https://jamesharrop.co" target="_blank" rel="noopener">jamesharrop.co &nearr;</a>
+          <a href="https://harrop.works" target="_blank" rel="noopener">harrop.works ↗</a>
           <a href="mailto:hello@unbehind.ai">hello@unbehind.ai</a>
         </div>
       </div>
@@ -1435,20 +1473,28 @@
 
     <div class="faq-grid">
       <div class="faq-item">
-        <h4>I&rsquo;ve bought AI courses before. Why is this different?</h4>
-        <p>It isn&rsquo;t a course. It&rsquo;s a Thursday night with someone building real things in front of you, every week.</p>
+        <h4>What if none of the workflows are worth it?</h4>
+        <p>You get a full refund. That&rsquo;s the only guarantee anyone in this category can honestly make, so we make it. It also almost never happens &mdash; there&rsquo;s always something.</p>
       </div>
       <div class="faq-item">
-        <h4>What if I&rsquo;m completely non-technical?</h4>
-        <p>So am I. I can&rsquo;t write a for loop. I can ship products.</p>
+        <h4>Don&rsquo;t I just need ChatGPT?</h4>
+        <p>ChatGPT is great for talking to. It&rsquo;s not great for running your inbox while you sleep, or updating your CRM from a call transcript. Those need building. That&rsquo;s what we do.</p>
       </div>
       <div class="faq-item">
-        <h4>What will I build in the first month?</h4>
-        <p>Whatever&rsquo;s on fire. A GPT in your voice, an inbox automation, a landing page. Your stuff, not homework.</p>
+        <h4>What tools do you use?</h4>
+        <p>Whatever fits: Claude, GPT, Zapier, Make, n8n, Gmail &amp; Calendar APIs, Attio, Notion, plus custom scripts where helpful. We build in your stack, not a bespoke one.</p>
       </div>
       <div class="faq-item">
-        <h4>Will the price go up?</h4>
-        <p>Yes, after the first cohort. First-cohort prices lock for life.</p>
+        <h4>Is this one person, really?</h4>
+        <p>Yes. Which means bookings are limited. It also means you always deal with the person who built the thing &mdash; not an account manager, not a junior, not an agency layer.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Who is this not for?</h4>
+        <p>If you&rsquo;ve got an engineering team already wiring AI into your product, this isn&rsquo;t for you &mdash; you need a fractional AI CTO. If you&rsquo;re pre-product and want a &ldquo;strategy&rdquo;, also no. This is for founders who want fewer hours spent on the boring stuff.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I talk first before paying for the audit?</h4>
+        <p>No. The &pound;750 buys the conversation and the brief. It filters out people who aren&rsquo;t serious and pays for the thinking. If you don&rsquo;t want to pay for a conversation about AI, you probably don&rsquo;t need one.</p>
       </div>
     </div>
   </section>
@@ -1456,11 +1502,13 @@
   <!-- ===== CTA ===== -->
   <section id="book" class="cta reveal">
     <div class="cta-card">
-      <h2>You don&rsquo;t need <span class="grad">another tutorial</span>.</h2>
+      <h2>Book the <span class="grad">audit</span>.</h2>
+      <p class="cta-note">£750 flat. 90 minutes on Zoom. A written brief within 48 hours. If nothing's worth building, you get a full refund.</p>
       <div class="cta-row">
-        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application" class="btn btn-primary">Apply &nbsp;&rarr;</a>
+        <a href="mailto:hello@unbehind.ai?subject=Booking%20the%20Audit" class="btn btn-primary">Book the audit &nbsp;→</a>
+        <a href="mailto:hello@unbehind.ai" class="btn btn-ghost">hello@unbehind.ai</a>
       </div>
-      <div class="capacity">30 founders. First-cohort prices lock for life.</div>
+      <div class="capacity">Taking two new Companion clients in June</div>
     </div>
   </section>
 
