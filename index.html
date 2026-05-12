@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unbehind - You're not behind. You're just lost. A Thursday-night build club for solo operators.</title>
+<title>Unbehind - You're not behind. You're alone. A Thursday-night build club for solo operators.</title>
 
 <meta name="description" content="Most AI teaching is written by developers, for developers. Unbehind is a Thursday-night build session for solo operators who'd rather ship than scroll. £250-£2,500/mo. First cohort opens summer 2026.">
 <link rel="canonical" href="https://unbehind.ai">
 
-<meta property="og:title" content="Unbehind - You're not behind. You're just lost.">
+<meta property="og:title" content="Unbehind - You're not behind. You're alone.">
 <meta property="og:description" content="A Thursday-night build club for solo operators who keep starting AI tutorials and finishing none. Three tiers from £250/mo.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://unbehind.ai">
@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Unbehind">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Unbehind - You're not behind. You're just lost.">
+<meta name="twitter:title" content="Unbehind - You're not behind. You're alone.">
 <meta name="twitter:description" content="A Thursday-night build club for solo operators who keep starting AI tutorials and finishing none. Three tiers from £250/mo.">
 <meta name="twitter:image" content="https://unbehind.ai/og.png">
 
@@ -353,14 +353,37 @@
   }
 
   .credentials-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-shrink: 0;
+    max-width: 380px;
+    line-height: 1.4;
+  }
+
+  .strip-eyebrow {
     font-family: 'Geist Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--ink-mute);
-    flex-shrink: 0;
-    max-width: 380px;
-    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .strip-eyebrow::before {
+    content: '';
+    width: 14px;
+    height: 1px;
+    background: var(--ink-mute);
+  }
+
+  .strip-headline {
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
   }
 
   .credentials-row {
@@ -460,18 +483,6 @@
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 28px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .familiar-card .quote-mark {
-    font-family: 'Geist', sans-serif;
-    font-size: 32px;
-    line-height: 1;
-    color: var(--grad-2);
-    opacity: 0.7;
-    font-weight: 400;
   }
 
   .familiar-card p {
@@ -479,6 +490,14 @@
     line-height: 1.5;
     color: var(--ink);
     letter-spacing: -0.005em;
+    text-indent: -1.05em;
+    padding-left: 1.05em;
+  }
+
+  .familiar-card p::before {
+    content: '\2014\00a0';
+    color: var(--grad-2);
+    font-weight: 500;
   }
 
   /* ============ SHIP CHIPS ============ */
@@ -1140,11 +1159,11 @@
     <div class="hero-copy">
       <div class="eyebrow">For solo operators figuring out AI</div>
 
-      <h1>You&rsquo;re not behind.<br/>You&rsquo;re just <span class="grad">lost.</span></h1>
+      <h1>You&rsquo;re not behind.<br/>You&rsquo;re <span class="grad">alone.</span></h1>
 
       <p class="hero-sub">Most AI teaching is written by developers, for developers. Unbehind is a Thursday-night build session for solo operators who&rsquo;d rather ship than scroll.</p>
 
-      <p class="hero-clarifier">Built on Claude Code - Anthropic&rsquo;s AI that writes software for you. No coding experience needed.</p>
+      <p class="hero-clarifier">Built with Claude Code &mdash; Anthropic&rsquo;s AI that writes code with you, in plain English. No coding experience needed.</p>
 
       <div class="hero-ctas">
         <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application&body=What%20I%20want%20to%20build%3A%0A%0AWhere%20I'm%20stuck%3A%0A%0AWhat%20I%20do%20for%20work%3A" class="btn btn-primary">Apply for the first cohort &nbsp;→</a>
@@ -1159,9 +1178,12 @@
     </div>
   </section>
 
-  <!-- ===== CREDENTIALS STRIP ===== -->
+  <!-- ===== PROOF STRIP ===== -->
   <div class="credentials-strip">
-    <div class="credentials-label">Built solo with Claude Code.<br/>No engineers. Real shipped products.</div>
+    <div class="credentials-label">
+      <span class="strip-eyebrow">Proof</span>
+      <span class="strip-headline">Built solo. Three live products.</span>
+    </div>
     <div class="credentials-row">
       <a href="https://adhouse.ai" target="_blank" rel="noopener">adhouse.ai</a>
       <a href="https://williamharrop.com" target="_blank" rel="noopener">williamharrop.com</a>
@@ -1178,15 +1200,12 @@
 
     <div class="familiar-grid">
       <div class="familiar-card">
-        <div class="quote-mark">&ldquo;</div>
         <p>You&rsquo;ve bought three AI courses this year. You finished none.</p>
       </div>
       <div class="familiar-card">
-        <div class="quote-mark">&ldquo;</div>
         <p>You open ChatGPT to do something specific. Twenty minutes later you&rsquo;ve closed the tab.</p>
       </div>
       <div class="familiar-card">
-        <div class="quote-mark">&ldquo;</div>
         <p>You can describe what you want to build. You just can&rsquo;t make it exist.</p>
       </div>
     </div>
@@ -1195,7 +1214,7 @@
   <!-- ===== HOW IT WORKS ===== -->
   <section id="how" class="reveal">
     <div class="section-head">
-      <div class="section-tag">How it works</div>
+      <div class="section-tag">The format</div>
       <h2>One Thursday night. <span class="grad">One thing shipped.</span></h2>
     </div>
 
@@ -1237,7 +1256,7 @@
         <div class="ship-icon">01</div>
         <div class="body">
           <h4>A GPT trained on your voice</h4>
-          <p>So the emails, posts and drafts actually sound like you wrote them.</p>
+          <p>So emails, posts and drafts actually sound like you.</p>
         </div>
       </div>
       <div class="ship-card">
@@ -1250,7 +1269,7 @@
       <div class="ship-card">
         <div class="ship-icon">03</div>
         <div class="body">
-          <h4>A landing page that ships this week</h4>
+          <h4>A landing page that doesn&rsquo;t take six weeks</h4>
           <p>No Webflow course. No designer. Live URL, your domain, in an afternoon.</p>
         </div>
       </div>
@@ -1271,7 +1290,7 @@
       <div class="ship-card">
         <div class="ship-icon">06</div>
         <div class="body">
-          <h4>One call into five outputs</h4>
+          <h4>One call, five outputs</h4>
           <p>Record once. Get a follow-up email, social post, blog draft, transcript and to-do list.</p>
         </div>
       </div>
@@ -1309,7 +1328,7 @@
         <ul class="service-list">
           <li>Everything in Cohort</li>
           <li>Monthly 1:1 with me (60 min)</li>
-          <li>Priority Slack - replies within 4 hours</li>
+          <li>Priority Slack &mdash; replies within 4 hours</li>
         </ul>
         <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application%20%E2%80%94%20Cohort%20%2B%20Coach&body=What%20I%20want%20to%20build%3A%0A%0AWhere%20I'm%20stuck%3A%0A%0AWhat%20I%20do%20for%20work%3A" class="service-cta">Apply for Cohort + Coach &rarr;</a>
       </div>
@@ -1331,7 +1350,7 @@
 
     <div class="guarantee">
       <div class="guarantee-seal">&check;</div>
-      <p><strong>First cohort opens summer 2026. 30 founders, hand-picked.</strong><span class="light">First-cohort price locks for life. Cancel any time.</span></p>
+      <p><strong>First-cohort price locks for life.</strong><span class="light">Cancel any time.</span></p>
     </div>
   </section>
 
@@ -1347,7 +1366,7 @@
       <div class="founder-note">
         <div class="meta">Founder &middot; the only one</div>
         <div class="founder-name">James Harrop</div>
-        <p>Saatchi-trained creative. Co-founded <strong>Eddie Harrop</strong> (stocked in Net-A-Porter and Vogue) and <strong>Minderful</strong> (Apple App of the Day, &pound;1m raised, NHS-approved mental-health app). Last year I couldn&rsquo;t code. This year I shipped seven products solo with Claude Code. <strong>I&rsquo;m not exceptional. I&rsquo;m just early.</strong></p>
+        <p>Saatchi-trained, two-time founder. <strong>Eddie Harrop</strong> (stocked in Net-A-Porter and Vogue). <strong>Minderful</strong> (Apple App of the Day, &pound;1m raised, NHS-approved). Last year I couldn&rsquo;t code. This year I shipped seven products solo with Claude Code. <strong>I&rsquo;m not exceptional. I&rsquo;m just early.</strong></p>
         <div class="founder-chips">
           <span class="chip">Saatchi &amp; Saatchi</span>
           <span class="chip">Apple App of the Day</span>
@@ -1371,27 +1390,19 @@
     <div class="faq-grid">
       <div class="faq-item">
         <h4>When does the first cohort start?</h4>
-        <p>Summer 2026. Apply now to lock your seat and your price - the first 30 founders pay the same rate for life.</p>
-      </div>
-      <div class="faq-item">
-        <h4>What if I can&rsquo;t make Thursday nights?</h4>
-        <p>Every session is recorded. The replay lands in Slack by Friday morning, ready for the weekend.</p>
+        <p>Summer 2026. Apply now to lock your seat and your price &mdash; the first 30 founders pay the same rate for life.</p>
       </div>
       <div class="faq-item">
         <h4>What do I need beyond the subscription?</h4>
-        <p>A laptop and a Claude Pro account (~&pound;17/mo from Anthropic). That&rsquo;s it. No coding experience required.</p>
+        <p>A laptop and a Claude Pro account (~&pound;17/mo from Anthropic). That&rsquo;s it. No coding experience, no technical background.</p>
       </div>
       <div class="faq-item">
         <h4>I&rsquo;ve bought AI courses before. Why is this different?</h4>
         <p>It isn&rsquo;t a course. It&rsquo;s a Thursday night with someone building real things in front of you, every week.</p>
       </div>
       <div class="faq-item">
-        <h4>What if I&rsquo;m completely non-technical?</h4>
-        <p>So am I. I can&rsquo;t write a for loop. I can ship products. That&rsquo;s the whole point.</p>
-      </div>
-      <div class="faq-item">
         <h4>Will I get in?</h4>
-        <p>Probably. The bar is wanting to ship, not technical chops. Tell me what you&rsquo;d build and I&rsquo;ll tell you if it&rsquo;s a fit - usually within 48 hours.</p>
+        <p>Probably. The bar is wanting to ship, not technical chops. Tell me what you&rsquo;d build and I&rsquo;ll tell you if it&rsquo;s a fit &mdash; usually within 48 hours.</p>
       </div>
     </div>
   </section>
