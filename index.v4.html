@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unbehind - You're not behind. You're just lost. A Thursday-night build club for solo operators.</title>
+<title>Unbehind — You're not behind. You're just lost. A private cohort for solo operators figuring out AI.</title>
 
-<meta name="description" content="Most AI teaching is written by developers, for developers. Unbehind is a Thursday-night build session for solo operators who'd rather ship than scroll. £250-£2,500/mo. First cohort opens summer 2026.">
+<meta name="description" content="You bookmark Notion AI on Monday and sign up for Claude on Tuesday. None of it sticks. That's not a you problem — most AI teaching is written by developers, for developers. Unbehind shows solo operators what to actually build. £250–£2,500/mo.">
 <link rel="canonical" href="https://unbehind.ai">
 
-<meta property="og:title" content="Unbehind - You're not behind. You're just lost.">
-<meta property="og:description" content="A Thursday-night build club for solo operators who keep starting AI tutorials and finishing none. Three tiers from £250/mo.">
+<meta property="og:title" content="Unbehind — You're not behind. You're just lost.">
+<meta property="og:description" content="A private cohort for solo operators who keep starting AI tutorials and finishing none. Three tiers from £250/mo.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://unbehind.ai">
 <meta property="og:image" content="https://unbehind.ai/og.png">
@@ -18,8 +18,8 @@
 <meta property="og:site_name" content="Unbehind">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Unbehind - You're not behind. You're just lost.">
-<meta name="twitter:description" content="A Thursday-night build club for solo operators who keep starting AI tutorials and finishing none. Three tiers from £250/mo.">
+<meta name="twitter:title" content="Unbehind — You're not behind. You're just lost.">
+<meta name="twitter:description" content="A private cohort for solo operators who keep starting AI tutorials and finishing none. Three tiers from £250/mo.">
 <meta name="twitter:image" content="https://unbehind.ai/og.png">
 
 <meta name="theme-color" content="#0A0A0B">
@@ -68,6 +68,7 @@
     overflow-x: hidden;
   }
 
+  /* ambient gradient wash */
   body::before {
     content: '';
     position: fixed;
@@ -246,17 +247,8 @@
     line-height: 1.55;
     color: var(--ink-soft);
     max-width: 500px;
-    margin-bottom: 16px;
-    font-weight: 400;
-  }
-
-  .hero-clarifier {
-    font-family: 'Geist Mono', monospace;
-    font-size: 12px;
-    line-height: 1.55;
-    color: var(--ink-mute);
-    max-width: 500px;
     margin-bottom: 36px;
+    font-weight: 400;
   }
 
   .hero-ctas {
@@ -266,7 +258,23 @@
     flex-wrap: wrap;
   }
 
-  /* hero visual - planet */
+  .hero-prices {
+    margin-top: 32px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-mute);
+  }
+
+  .hero-prices span { display: flex; gap: 6px; }
+  .hero-prices strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* hero visual — planet */
   .hero-visual {
     position: relative;
     max-width: 440px;
@@ -335,6 +343,129 @@
     to   { filter: saturate(0.95) brightness(1.05) hue-rotate(360deg); }
   }
 
+  .audit-card {
+    position: relative;
+    background: linear-gradient(165deg, rgba(26, 26, 29, 0.95), rgba(18, 18, 20, 0.95));
+    border: 1px solid var(--border-hi);
+    border-radius: 20px;
+    padding: 24px 24px 20px;
+    z-index: 1;
+    box-shadow:
+      0 24px 60px -12px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.03);
+    transform: rotate(-1.2deg);
+    animation: card-drift 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes card-drift {
+    0%   { transform: rotate(-1.2deg) translateY(-3px); }
+    100% { transform: rotate(-1.2deg) translateY(3px); }
+  }
+
+  .audit-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .audit-tag {
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .audit-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--grad-3);
+    box-shadow: 0 0 8px var(--grad-3);
+  }
+
+  .audit-title {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .audit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .audit-list li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .audit-num {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(167, 139, 250, 0.12);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+  }
+
+  .audit-list strong {
+    display: block;
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 14.5px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 2px;
+  }
+
+  .audit-list span {
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-family: 'Geist Mono', monospace;
+    letter-spacing: 0;
+  }
+
+  .audit-foot {
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Geist Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+  }
+
+  .audit-brand {
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-transform: none;
+  }
+
   /* ============ CREDENTIALS STRIP ============ */
 
   .credentials-strip {
@@ -355,12 +486,10 @@
   .credentials-label {
     font-family: 'Geist Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ink-mute);
     flex-shrink: 0;
-    max-width: 380px;
-    line-height: 1.5;
   }
 
   .credentials-row {
@@ -374,15 +503,9 @@
     font-weight: 500;
   }
 
-  .credentials-row a {
-    color: inherit;
-    transition: color 0.2s;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 2px;
-  }
-  .credentials-row a:hover {
-    color: var(--ink);
-    border-bottom-color: var(--ink);
+  .credentials-row span {
+    font-style: italic;
+    font-weight: 400;
   }
 
   /* ============ SECTION BASE ============ */
@@ -447,94 +570,49 @@
     max-width: 560px;
   }
 
-  /* ============ SOUND FAMILIAR ============ */
+  /* ============ ACTUALLY ============ */
 
-  .familiar-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
-  .familiar-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 28px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .familiar-card .quote-mark {
-    font-family: 'Geist', sans-serif;
-    font-size: 32px;
-    line-height: 1;
-    color: var(--grad-2);
-    opacity: 0.7;
-    font-weight: 400;
-  }
-
-  .familiar-card p {
-    font-size: 15.5px;
-    line-height: 1.5;
-    color: var(--ink);
-    letter-spacing: -0.005em;
-  }
-
-  /* ============ SHIP CHIPS ============ */
-
-  .ship-grid {
+  .actually-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .ship-card {
-    background: var(--bg-surface);
+    gap: 1px;
+    background: var(--border);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 22px 24px;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    transition: all 0.25s ease;
-  }
-  .ship-card:hover {
-    background: var(--bg-elevated);
-    border-color: var(--border-hi);
+    border-radius: 16px;
+    overflow: hidden;
   }
 
-  .ship-icon {
+  .actually-card {
+    background: var(--bg-surface);
+    padding: 32px 28px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .actually-cross {
     flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, rgba(167, 139, 250, 0.18), rgba(125, 211, 192, 0.12));
-    border: 1px solid rgba(167, 139, 250, 0.22);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(240, 171, 161, 0.14);
+    color: var(--grad-2);
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Geist Mono', monospace;
     font-size: 13px;
-    color: var(--accent);
-  }
-
-  .ship-card .body {
-    min-width: 0;
-  }
-
-  .ship-card h4 {
-    font-family: 'Geist', sans-serif;
     font-weight: 500;
-    font-size: 15px;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin-bottom: 4px;
+    margin-top: 2px;
   }
 
-  .ship-card p {
-    font-size: 13.5px;
+  .actually-card p {
+    font-size: 16px;
     line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .actually-card p .light {
     color: var(--ink-soft);
   }
 
@@ -542,8 +620,8 @@
 
   .services {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
 
   .service {
@@ -567,6 +645,20 @@
   .service.featured {
     background: linear-gradient(165deg, rgba(167, 139, 250, 0.10), rgba(240, 171, 161, 0.04) 60%, transparent);
     border-color: rgba(167, 139, 250, 0.22);
+  }
+  .service.featured::before {
+    content: 'Most chosen';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 4px 10px;
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    border-radius: 999px;
   }
 
   .service-tag {
@@ -719,6 +811,56 @@
     margin-top: 2px;
   }
 
+  /* ============ WORKFLOWS ============ */
+
+  .workflows {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .workflow {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    transition: all 0.25s ease;
+  }
+
+  .workflow:hover {
+    background: var(--bg-elevated);
+    border-color: var(--border-hi);
+  }
+
+  .workflow-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .workflow-tag::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--grad-2);
+  }
+
+  .workflow h4 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+
   /* ============ SPRINT TIMELINE ============ */
 
   .timeline {
@@ -782,13 +924,6 @@
     color: var(--ink-soft);
     line-height: 1.55;
     max-width: 640px;
-  }
-
-  .timeline-item p .light {
-    color: var(--ink-mute);
-    font-size: 13.5px;
-    display: block;
-    margin-top: 4px;
   }
 
   /* ============ FOUNDER ============ */
@@ -977,7 +1112,7 @@
 
   .cta h2 {
     margin: 0 auto 20px;
-    max-width: 22ch;
+    max-width: 18ch;
   }
 
   .cta-note {
@@ -1068,11 +1203,12 @@
   @media (max-width: 960px) {
     .hero { grid-template-columns: 1fr; gap: 56px; padding-bottom: 72px; }
     .hero-visual { max-width: 320px; margin: 0 auto; }
-    .familiar-grid { grid-template-columns: 1fr; }
-    .ship-grid { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 880px) {
+    .actually-grid { grid-template-columns: 1fr; }
+    .services { grid-template-columns: 1fr; }
+    .workflows { grid-template-columns: 1fr 1fr; }
     .faq-grid { grid-template-columns: 1fr; }
     .founder { grid-template-columns: 1fr; gap: 24px; padding: 32px; text-align: left; }
     .founder-avatar { width: 96px; height: 96px; font-size: 44px; }
@@ -1095,13 +1231,16 @@
 
     .credentials-strip { gap: 20px; padding: 20px 20px; justify-content: flex-start; }
     .credentials-row { gap: 20px; font-size: 13px; }
-    .credentials-label { font-size: 10.5px; }
 
     section { padding: 72px 20px; }
     .section-head { margin-bottom: 32px; }
 
+    .workflows { grid-template-columns: 1fr; }
+
     .cta { padding: 72px 20px; }
     .cta-card { padding: 44px 24px; }
+
+    .hero-prices { gap: 16px; font-size: 11px; }
 
     .guarantee { flex-direction: column; align-items: flex-start; gap: 16px; padding: 24px; }
 
@@ -1129,7 +1268,7 @@
     <a href="#how" class="nav-link">How it works</a>
     <a href="#services" class="nav-link">Pricing</a>
     <a href="#faq" class="nav-link">FAQ</a>
-    <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application&body=What%20I%20want%20to%20build%3A%0A%0AWhere%20I'm%20stuck%3A%0A%0AWhat%20I%20do%20for%20work%3A" class="btn btn-primary">Apply</a>
+    <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application" class="btn btn-primary">Apply</a>
   </div>
 </nav>
 
@@ -1142,12 +1281,10 @@
 
       <h1>You&rsquo;re not behind.<br/>You&rsquo;re just <span class="grad">lost.</span></h1>
 
-      <p class="hero-sub">Most AI teaching is written by developers, for developers. Unbehind is a Thursday-night build session for solo operators who&rsquo;d rather ship than scroll.</p>
-
-      <p class="hero-clarifier">Built on Claude Code - Anthropic&rsquo;s AI that writes software for you. No coding experience needed.</p>
+      <p class="hero-sub">AI teaching is written by developers, for developers. Unbehind shows solo operators what to actually ship &mdash; one Thursday at a time.</p>
 
       <div class="hero-ctas">
-        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application&body=What%20I%20want%20to%20build%3A%0A%0AWhere%20I'm%20stuck%3A%0A%0AWhat%20I%20do%20for%20work%3A" class="btn btn-primary">Apply for the first cohort &nbsp;→</a>
+        <a href="#services" class="btn btn-primary">See the three tiers &nbsp;→</a>
         <a href="#how" class="btn btn-ghost">How it works</a>
       </div>
     </div>
@@ -1161,51 +1298,30 @@
 
   <!-- ===== CREDENTIALS STRIP ===== -->
   <div class="credentials-strip">
-    <div class="credentials-label">Built solo with Claude Code.<br/>No engineers. Real shipped products.</div>
+    <div class="credentials-label">Built solo with Claude Code. No engineers.</div>
     <div class="credentials-row">
-      <a href="https://adhouse.ai" target="_blank" rel="noopener">adhouse.ai</a>
-      <a href="https://williamharrop.com" target="_blank" rel="noopener">williamharrop.com</a>
-      <a href="https://jamesharrop.co" target="_blank" rel="noopener">jamesharrop.co</a>
+      <span><a href="https://adhouse.ai" target="_blank" rel="noopener" style="color:inherit">adhouse.ai</a></span>
+      <span><a href="https://williamharrop.com" target="_blank" rel="noopener" style="color:inherit">williamharrop.com</a></span>
+      <span><a href="https://jamesharrop.co" target="_blank" rel="noopener" style="color:inherit">jamesharrop.co</a></span>
+      <span>Regeno QA</span>
+      <span>The ad factory</span>
+      <span>This site</span>
     </div>
   </div>
-
-  <!-- ===== SOUND FAMILIAR ===== -->
-  <section class="reveal">
-    <div class="section-head">
-      <div class="section-tag">Sound familiar?</div>
-      <h2>You&rsquo;re not lazy. You&rsquo;re <span class="grad">stuck.</span></h2>
-    </div>
-
-    <div class="familiar-grid">
-      <div class="familiar-card">
-        <div class="quote-mark">&ldquo;</div>
-        <p>You&rsquo;ve bought three AI courses this year. You finished none.</p>
-      </div>
-      <div class="familiar-card">
-        <div class="quote-mark">&ldquo;</div>
-        <p>You open ChatGPT to do something specific. Twenty minutes later you&rsquo;ve closed the tab.</p>
-      </div>
-      <div class="familiar-card">
-        <div class="quote-mark">&ldquo;</div>
-        <p>You can describe what you want to build. You just can&rsquo;t make it exist.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- ===== HOW IT WORKS ===== -->
   <section id="how" class="reveal">
     <div class="section-head">
       <div class="section-tag">How it works</div>
-      <h2>One Thursday night. <span class="grad">One thing shipped.</span></h2>
+      <h2>One Thursday <span class="grad">a week</span>.</h2>
     </div>
 
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-marker"></div>
-        <div class="day">Thursday, 8pm UK &middot; 90 minutes</div>
+        <div class="day">Thursday, 8pm UK</div>
         <h4>Live build session</h4>
-        <p>I open Claude Code and build something real, start to finish. You watch, ask, copy the prompt.
-          <span class="light">Always recorded. Replay drops in Slack by Friday morning.</span></p>
+        <p>I open Claude Code and build something real. You watch, ask, copy the prompt.</p>
       </div>
 
       <div class="timeline-item">
@@ -1219,64 +1335,11 @@
         <div class="timeline-marker"></div>
         <div class="day">Between sessions</div>
         <h4>Private Slack</h4>
-        <p>Drop your half-finished thing in. Unblocked the same day.</p>
+        <p>Drop your half-finished thing in. Unblocked within the hour.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== SHIP ===== -->
-  <section class="reveal">
-    <div class="section-head">
-      <div class="section-tag">What you&rsquo;ll ship</div>
-      <h2>Real things. Your <span class="grad">business</span>.</h2>
-      <p class="section-lead">First-month builds from the people I&rsquo;ve already coached. Pick one, or bring your own on day one.</p>
-    </div>
-
-    <div class="ship-grid">
-      <div class="ship-card">
-        <div class="ship-icon">01</div>
-        <div class="body">
-          <h4>A GPT trained on your voice</h4>
-          <p>So the emails, posts and drafts actually sound like you wrote them.</p>
-        </div>
-      </div>
-      <div class="ship-card">
-        <div class="ship-icon">02</div>
-        <div class="body">
-          <h4>Inbox triage with drafted replies</h4>
-          <p>Wake up to a clean inbox and three drafts waiting for one-click send.</p>
-        </div>
-      </div>
-      <div class="ship-card">
-        <div class="ship-icon">03</div>
-        <div class="body">
-          <h4>A landing page that ships this week</h4>
-          <p>No Webflow course. No designer. Live URL, your domain, in an afternoon.</p>
-        </div>
-      </div>
-      <div class="ship-card">
-        <div class="ship-icon">04</div>
-        <div class="body">
-          <h4>A client report that writes itself</h4>
-          <p>Drop in the data, get a branded PDF your clients actually open.</p>
-        </div>
-      </div>
-      <div class="ship-card">
-        <div class="ship-icon">05</div>
-        <div class="body">
-          <h4>A lead scraper that runs overnight</h4>
-          <p>Wake up to 30 qualified prospects. Repeat daily, forever.</p>
-        </div>
-      </div>
-      <div class="ship-card">
-        <div class="ship-icon">06</div>
-        <div class="body">
-          <h4>One call into five outputs</h4>
-          <p>Record once. Get a follow-up email, social post, blog draft, transcript and to-do list.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ===== SERVICES ===== -->
   <section id="services" class="reveal">
@@ -1285,53 +1348,52 @@
       <h2>Three <span class="grad">tiers</span>. Pick what fits.</h2>
     </div>
 
-    <div class="services">
+    <div class="services" style="grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px;">
 
       <!-- TIER 1 -->
       <div class="service">
-        <div class="service-tag">Cohort</div>
+        <div class="service-tag">Tier 1</div>
         <h3>&pound;250<span style="font-size:18px;color:var(--ink-soft);font-weight:400">/mo</span></h3>
-        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">For watchers and builders</div>
+        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">Cohort</div>
         <ul class="service-list">
           <li>Live build session every Thursday</li>
-          <li>Replay in Slack by Friday</li>
-          <li>Private Slack community</li>
+          <li>Private Slack</li>
           <li>Cancel any time</li>
         </ul>
-        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application%20%E2%80%94%20Cohort&body=What%20I%20want%20to%20build%3A%0A%0AWhere%20I'm%20stuck%3A%0A%0AWhat%20I%20do%20for%20work%3A" class="service-cta">Apply for Cohort &rarr;</a>
+        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application" class="service-cta">Apply &rarr;</a>
       </div>
 
       <!-- TIER 2 - FEATURED -->
       <div class="service featured">
-        <div class="service-tag">Cohort + Coach</div>
+        <div class="service-tag">Most chosen</div>
         <h3>&pound;750<span style="font-size:18px;color:var(--ink-soft);font-weight:400">/mo</span></h3>
-        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">When you need someone in your corner</div>
+        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">Cohort + Coach</div>
         <ul class="service-list">
           <li>Everything in Cohort</li>
-          <li>Monthly 1:1 with me (60 min)</li>
-          <li>Priority Slack - replies within 4 hours</li>
+          <li>Monthly 1:1 with me</li>
+          <li>Priority Slack</li>
         </ul>
-        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application%20%E2%80%94%20Cohort%20%2B%20Coach&body=What%20I%20want%20to%20build%3A%0A%0AWhere%20I'm%20stuck%3A%0A%0AWhat%20I%20do%20for%20work%3A" class="service-cta">Apply for Cohort + Coach &rarr;</a>
+        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application" class="service-cta">Apply &rarr;</a>
       </div>
 
       <!-- TIER 3 -->
       <div class="service">
-        <div class="service-tag">Build with me &middot; Capped at 6</div>
+        <div class="service-tag">Capped at 6</div>
         <h3>&pound;2,500<span style="font-size:18px;color:var(--ink-soft);font-weight:400">/mo</span></h3>
-        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">When you want it shipped, not learned</div>
+        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">Build with me</div>
         <ul class="service-list">
           <li>Everything in Cohort + Coach</li>
           <li>One full day a month, just us</li>
           <li>We ship the thing together</li>
         </ul>
-        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application%20%E2%80%94%20Build%20with%20me&body=What%20I%20want%20to%20build%3A%0A%0AWhere%20I'm%20stuck%3A%0A%0AWhat%20I%20do%20for%20work%3A" class="service-cta">Apply for Build with me &rarr;</a>
+        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application" class="service-cta">Apply &rarr;</a>
       </div>
 
     </div>
 
     <div class="guarantee">
       <div class="guarantee-seal">&check;</div>
-      <p><strong>First cohort opens summer 2026. 30 founders, hand-picked.</strong><span class="light">First-cohort price locks for life. Cancel any time.</span></p>
+      <p><strong>First-cohort prices lock for life.</strong><span class="light">30 founders, hand-picked.</span></p>
     </div>
   </section>
 
@@ -1347,11 +1409,14 @@
       <div class="founder-note">
         <div class="meta">Founder &middot; the only one</div>
         <div class="founder-name">James Harrop</div>
-        <p>Saatchi-trained creative. Co-founded <strong>Eddie Harrop</strong> (stocked in Net-A-Porter and Vogue) and <strong>Minderful</strong> (Apple App of the Day, &pound;1m raised, NHS-approved mental-health app). Last year I couldn&rsquo;t code. This year I shipped seven products solo with Claude Code. <strong>I&rsquo;m not exceptional. I&rsquo;m just early.</strong></p>
+        <p>Saatchi-trained creative. Started <strong>Eddie Harrop</strong> (Net-A-Porter, Vogue) and <strong>Minderful</strong> (Apple App of the Day, &pound;1m raised). Last year I couldn&rsquo;t code. This year I shipped seven products solo with Claude Code. <strong>I&rsquo;m not exceptional. I&rsquo;m just early.</strong></p>
         <div class="founder-chips">
           <span class="chip">Saatchi &amp; Saatchi</span>
+          <span class="chip">Net-A-Porter</span>
           <span class="chip">Apple App of the Day</span>
           <span class="chip">&pound;1m raised</span>
+          <span class="chip">NHS-approved</span>
+          <span class="chip">Non-technical</span>
         </div>
         <div class="founder-links">
           <a href="https://jamesharrop.co" target="_blank" rel="noopener">jamesharrop.co &nearr;</a>
@@ -1370,28 +1435,20 @@
 
     <div class="faq-grid">
       <div class="faq-item">
-        <h4>When does the first cohort start?</h4>
-        <p>Summer 2026. Apply now to lock your seat and your price - the first 30 founders pay the same rate for life.</p>
-      </div>
-      <div class="faq-item">
-        <h4>What if I can&rsquo;t make Thursday nights?</h4>
-        <p>Every session is recorded. The replay lands in Slack by Friday morning, ready for the weekend.</p>
-      </div>
-      <div class="faq-item">
-        <h4>What do I need beyond the subscription?</h4>
-        <p>A laptop and a Claude Pro account (~&pound;17/mo from Anthropic). That&rsquo;s it. No coding experience required.</p>
-      </div>
-      <div class="faq-item">
         <h4>I&rsquo;ve bought AI courses before. Why is this different?</h4>
         <p>It isn&rsquo;t a course. It&rsquo;s a Thursday night with someone building real things in front of you, every week.</p>
       </div>
       <div class="faq-item">
         <h4>What if I&rsquo;m completely non-technical?</h4>
-        <p>So am I. I can&rsquo;t write a for loop. I can ship products. That&rsquo;s the whole point.</p>
+        <p>So am I. I can&rsquo;t write a for loop. I can ship products.</p>
       </div>
       <div class="faq-item">
-        <h4>Will I get in?</h4>
-        <p>Probably. The bar is wanting to ship, not technical chops. Tell me what you&rsquo;d build and I&rsquo;ll tell you if it&rsquo;s a fit - usually within 48 hours.</p>
+        <h4>What will I build in the first month?</h4>
+        <p>Whatever&rsquo;s on fire. A GPT in your voice, an inbox automation, a landing page. Your stuff, not homework.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Will the price go up?</h4>
+        <p>Yes, after the first cohort. First-cohort prices lock for life.</p>
       </div>
     </div>
   </section>
@@ -1399,12 +1456,11 @@
   <!-- ===== CTA ===== -->
   <section id="book" class="cta reveal">
     <div class="cta-card">
-      <h2>Pick a Thursday night.<br/><span class="grad">Ship by Friday morning.</span></h2>
-      <p class="cta-note">Tell me what you want to build. I&rsquo;ll tell you if it&rsquo;s a fit.</p>
+      <h2>You don&rsquo;t need <span class="grad">another tutorial</span>.</h2>
       <div class="cta-row">
-        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application&body=What%20I%20want%20to%20build%3A%0A%0AWhere%20I'm%20stuck%3A%0A%0AWhat%20I%20do%20for%20work%3A" class="btn btn-primary">Apply for the first cohort &nbsp;→</a>
+        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20application" class="btn btn-primary">Apply &nbsp;&rarr;</a>
       </div>
-      <div class="capacity">30 seats. Summer 2026.</div>
+      <div class="capacity">30 founders. First-cohort prices lock for life.</div>
     </div>
   </section>
 
