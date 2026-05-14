@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brief · Max Maufe · Unbehind</title>
+
+<meta name="description" content="Pre-call brief for Max Maufe. Headhunter looking for more leads. Questions I'll ask, AI builds I'm thinking about, next steps.">
+<meta name="robots" content="noindex,nofollow">
+
+<meta name="theme-color" content="#0A0A0B">
+<meta name="color-scheme" content="dark">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:          #0A0A0B;
+    --bg-surface:  #121214;
+    --bg-elevated: #1A1A1D;
+    --ink:         #F5F5F4;
+    --ink-soft:    #A8A8A5;
+    --ink-mute:    #6E6E6B;
+    --border:      rgba(255, 255, 255, 0.08);
+    --border-soft: rgba(255, 255, 255, 0.05);
+    --border-hi:   rgba(255, 255, 255, 0.14);
+
+    --grad-1: #A78BFA;
+    --grad-2: #F0ABA1;
+    --grad-3: #7DD3C0;
+
+    --accent:      #C7B9FF;
+    --accent-mute: #8B7FD1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.005em;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120vw;
+    height: 90vh;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 30%, rgba(167, 139, 250, 0.18), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 75% 40%, rgba(240, 171, 161, 0.14), transparent 70%),
+      radial-gradient(ellipse 60% 45% at 50% 80%, rgba(125, 211, 192, 0.10), transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ============ NAV ============ */
+
+  nav.top {
+    padding: 22px 28px;
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .wordmark {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .wordmark::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
+    filter: saturate(0.9) brightness(1.05);
+  }
+
+  .nav-meta {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  /* ============ CONTAINER ============ */
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 28px 120px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    padding: 7px 14px 7px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 28px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--grad-2);
+    box-shadow: 0 0 10px var(--grad-2);
+  }
+
+  h1 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4.2vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  h1 .grad {
+    background: linear-gradient(110deg, var(--grad-1) 0%, var(--grad-2) 50%, var(--grad-3) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    font-weight: 400;
+    display: inline-block;
+    padding: 0.05em 0.12em 0.05em 0.02em;
+    margin: -0.05em -0.12em -0.05em -0.02em;
+    line-height: 1.12;
+  }
+
+  .intro {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  .intro strong { color: var(--ink); font-weight: 500; }
+
+  .meta-line {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-mute);
+    margin-bottom: 56px;
+  }
+
+  /* ============ SECTIONS ============ */
+
+  section {
+    margin-bottom: 56px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-tag::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: var(--ink-mute);
+  }
+
+  h2 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: clamp(24px, 3.2vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  h2 .grad {
+    background: linear-gradient(110deg, var(--grad-1), var(--grad-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    display: inline-block;
+    padding: 0.05em 0.12em 0.05em 0.02em;
+    margin: -0.05em -0.12em -0.05em -0.02em;
+    line-height: 1.18;
+  }
+
+  p, li {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  p strong, li strong { color: var(--ink); font-weight: 500; }
+
+  /* known-knowns card */
+  .know-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-top: 16px;
+  }
+  .know-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .know-card li {
+    padding-left: 22px;
+    position: relative;
+    color: var(--ink);
+    font-size: 14.5px;
+  }
+  .know-card li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--grad-3);
+    font-size: 12px;
+    top: 2px;
+  }
+
+  /* question groups */
+  .qgroup {
+    margin-top: 28px;
+  }
+  .qgroup h3 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .qgroup h3 .letter {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-mute);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  .qgroup ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 0;
+  }
+  .qgroup ul li {
+    padding-left: 18px;
+    position: relative;
+    font-size: 15px;
+  }
+  .qgroup ul li::before {
+    content: '\2014';
+    position: absolute;
+    left: 0;
+    color: var(--grad-2);
+    font-weight: 500;
+  }
+
+  /* build idea cards */
+  .build-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .build {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .build-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.18), rgba(125, 211, 192, 0.12));
+    border: 1px solid rgba(167, 139, 250, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+  }
+
+  .build-body { min-width: 0; flex: 1; }
+
+  .build h4 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .build p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  /* numbered next-steps */
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .steps li {
+    counter-increment: step;
+    padding-left: 44px;
+    position: relative;
+    font-size: 15.5px;
+    color: var(--ink);
+  }
+  .steps li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    background: rgba(167, 139, 250, 0.10);
+    border: 1px solid rgba(167, 139, 250, 0.20);
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  /* CTA */
+  .cta-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 32px;
+    margin-top: 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(167, 139, 250, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .cta-card > * { position: relative; z-index: 1; }
+
+  .cta-card h2 {
+    margin: 0 auto 16px;
+    max-width: 22ch;
+  }
+
+  .cta-note {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 auto 24px;
+    max-width: 460px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn:hover {
+    background: #fff;
+    transform: translateY(-1px);
+  }
+
+  /* footer */
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 28px;
+    border-top: 1px solid var(--border-soft);
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer a { color: var(--ink-mute); }
+  footer a:hover { color: var(--ink); }
+
+  ::selection { background: var(--grad-1); color: var(--bg); }
+
+  @media (max-width: 560px) {
+    main { padding: 24px 20px 80px; }
+    nav.top { padding: 18px 20px; }
+    section { margin-bottom: 44px; }
+    .build { flex-direction: row; padding: 18px 20px; }
+    .cta-card { padding: 32px 20px; }
+    footer { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a href="/" class="wordmark">Unbehind</a>
+  <div class="nav-meta">Private · For Max Maufe</div>
+</nav>
+
+<main>
+
+  <div class="eyebrow">Pre-call brief</div>
+
+  <h1>Hi Max. Read this <span class="grad">before our call.</span></h1>
+
+  <p class="intro">A short page to keep us aligned before the brief call. Should take you about 10 minutes. Jot anything down as you go &mdash; bring your reactions on Zoom.</p>
+
+  <p class="intro">The call has two jobs: (1) understand your business well enough that I can spot the AI flows that&rsquo;d actually move the needle, and (2) agree on the first thing we&rsquo;d build together.</p>
+
+  <p class="meta-line">30 minutes · Free · Zoom link to follow</p>
+
+  <!-- ===== WHAT I KNOW ===== -->
+  <section>
+    <div class="section-tag">What I already know</div>
+    <h2>The starting point.</h2>
+    <p>This is what I&rsquo;m bringing into the call &mdash; correct me where I&rsquo;m wrong, fill the gaps where I&rsquo;m thin.</p>
+    <div class="know-card">
+      <ul>
+        <li>You&rsquo;re a headhunter</li>
+        <li>You want more leads</li>
+        <li>That&rsquo;s it &mdash; the rest is what we&rsquo;ll unpack</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== QUESTIONS ===== -->
+  <section>
+    <div class="section-tag">Questions I&rsquo;ll ask</div>
+    <h2>The seven things I need to <span class="grad">understand.</span></h2>
+    <p>Don&rsquo;t pre-write answers &mdash; just have them in your head. We&rsquo;ll move quickly.</p>
+
+    <div class="qgroup">
+      <h3><span class="letter">A</span> The business</h3>
+      <ul>
+        <li>What sectors and seniority do you recruit in?</li>
+        <li>Retained, contingent, or both?</li>
+        <li>Solo, or with a team / assistants / researchers?</li>
+        <li>Rough numbers: average placement fee, placements per month, run-rate.</li>
+      </ul>
+    </div>
+
+    <div class="qgroup">
+      <h3><span class="letter">B</span> &lsquo;More leads&rsquo; &mdash; which kind?</h3>
+      <ul>
+        <li>Candidates (people to place), clients (companies who&rsquo;ll hire), or both?</li>
+        <li>If you had to pick one as the bigger bottleneck right now &mdash; which?</li>
+        <li>What does &lsquo;a lead&rsquo; mean for you? A name? A meeting? A signed JD?</li>
+      </ul>
+    </div>
+
+    <div class="qgroup">
+      <h3><span class="letter">C</span> How leads come in today</h3>
+      <ul>
+        <li>Candidates: LinkedIn Recruiter, referrals, inbound, your own database?</li>
+        <li>Clients: cold outreach, referrals, content, network, BD partner?</li>
+        <li>What&rsquo;s actually working? What&rsquo;s broken or feels embarrassing?</li>
+        <li>If a lead came in tomorrow, walk me through what happens in the first hour.</li>
+      </ul>
+    </div>
+
+    <div class="qgroup">
+      <h3><span class="letter">D</span> Your week</h3>
+      <ul>
+        <li>Where does the time actually go? Hours on sourcing, outreach, calls, admin.</li>
+        <li>Which task do you most wish you didn&rsquo;t have to do?</li>
+        <li>Which task do you wish you had more time for &mdash; and what stops you?</li>
+      </ul>
+    </div>
+
+    <div class="qgroup">
+      <h3><span class="letter">E</span> Tools and data</h3>
+      <ul>
+        <li>ATS / CRM stack? (Bullhorn, Loxo, Vincere, Recruit CRM, Notion, spreadsheet?)</li>
+        <li>LinkedIn Recruiter or Sales Navigator? Other paid sourcing tools?</li>
+        <li>What data is already sitting around &mdash; old CV piles, past candidate lists, BD notes?</li>
+        <li>Anything compliance-wise to know upfront (GDPR on candidate data, exclusivity clauses)?</li>
+      </ul>
+    </div>
+
+    <div class="qgroup">
+      <h3><span class="letter">F</span> What good looks like</h3>
+      <ul>
+        <li>If we double your lead flow next quarter &mdash; what does that mean? Volume? Quality? Fees?</li>
+        <li>One number that, if it moved, would feel like a real win.</li>
+        <li>What would &lsquo;great&rsquo; look like by the end of the year if this works?</li>
+      </ul>
+    </div>
+
+    <div class="qgroup">
+      <h3><span class="letter">G</span> Constraints</h3>
+      <ul>
+        <li>Budget &mdash; Setup at &pound;500 to start, or thinking about retainer from day one?</li>
+        <li>Timeline &mdash; when do you want the first thing live?</li>
+        <li>Anything off-limits? (Data you can&rsquo;t share, tools you can&rsquo;t touch, ways of working you won&rsquo;t accept.)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== INITIAL BUILDS ===== -->
+  <section>
+    <div class="section-tag">What I&rsquo;m already thinking about</div>
+    <h2>Six flows that might fit a <span class="grad">headhunter.</span></h2>
+    <p>These are just starting points. You don&rsquo;t have to react to all of them &mdash; pick the ones that sound right, kill the ones that don&rsquo;t. The shortlist comes out of the call, not out of this page.</p>
+
+    <div class="build-list">
+
+      <div class="build">
+        <div class="build-num">01</div>
+        <div class="build-body">
+          <h4>Candidate sourcing scraper</h4>
+          <p>You define the niche; the system pulls 30-50 new candidates each morning from LinkedIn with role, location, current company, and a signal that they might move. Lands in a spreadsheet or your inbox.</p>
+        </div>
+      </div>
+
+      <div class="build">
+        <div class="build-num">02</div>
+        <div class="build-body">
+          <h4>Outreach personaliser</h4>
+          <p>Paste a candidate profile, get a first-message draft in your voice in under 30 seconds. Trained on your best historical outreach. Works for ten at a time.</p>
+        </div>
+      </div>
+
+      <div class="build">
+        <div class="build-num">03</div>
+        <div class="build-body">
+          <h4>Client target list (overnight)</h4>
+          <p>Companies hiring in your niche, scraped from job boards every night and ranked by likelihood-to-engage-a-headhunter. With the hiring manager&rsquo;s contact where we can find it.</p>
+        </div>
+      </div>
+
+      <div class="build">
+        <div class="build-num">04</div>
+        <div class="build-body">
+          <h4>JD-to-shortlist matcher</h4>
+          <p>Paste a job description, get a ranked shortlist from your existing database (or LinkedIn) with a one-paragraph reason for each match. Cuts the &lsquo;who do I have for this?&rsquo; step from 90 minutes to 5.</p>
+        </div>
+      </div>
+
+      <div class="build">
+        <div class="build-num">05</div>
+        <div class="build-body">
+          <h4>CV parser + searchable database</h4>
+          <p>Drop any CV in, structured data out, deduped against your database. Searchable in plain English &mdash; &ldquo;show me UK-based fintech CTOs who&rsquo;ve raised Series A.&rdquo;</p>
+        </div>
+      </div>
+
+      <div class="build">
+        <div class="build-num">06</div>
+        <div class="build-body">
+          <h4>Daily market signal digest</h4>
+          <p>Overnight scrape of funding rounds, exec moves, layoffs and new senior hires in your niche. Lands in your inbox at 7am with the &lsquo;who to call this morning&rsquo; list.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== NEXT STEPS ===== -->
+  <section>
+    <div class="section-tag">After the brief call</div>
+    <h2>How this goes from here.</h2>
+    <ol class="steps">
+      <li>We do the 30-min Zoom. I take notes. You tell me where I&rsquo;m wrong.</li>
+      <li>If it&rsquo;s a fit, I write up the build spec the same day and send it over.</li>
+      <li>You approve the spec. I go away and design + build (5-7 days, offline).</li>
+      <li>We jump on a 60-90 min integration call. I plumb it into your business, you watch it work, we fix what&rsquo;s broken.</li>
+      <li>You leave with a working tool. We either stop there, or move to a monthly retainer.</li>
+    </ol>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <div class="cta-card">
+    <h2>Got everything you need?</h2>
+    <p class="cta-note">Reply to my last email with two or three times that work this week, or grab a slot on the Zoom invite when it lands. Anything you want to send ahead of the call, just forward it.</p>
+    <a href="mailto:hello@unbehind.ai?subject=Brief%20call%20%E2%80%94%20Max%20Maufe&body=Hi%20James%2C%0A%0AThree%20times%20that%20work%20for%20me%20this%20week%3A%0A%0A1.%20%0A2.%20%0A3.%20%0A%0AStuff%20I%27d%20want%20to%20send%20ahead%20of%20the%20call%3A%0A%0A" class="btn">Reply with times &nbsp;→</a>
+  </div>
+
+</main>
+
+<footer>
+  <div>Unbehind · For Max Maufe · Private brief</div>
+  <div><a href="mailto:hello@unbehind.ai">hello@unbehind.ai</a></div>
+</footer>
+
+</body>
+</html>
