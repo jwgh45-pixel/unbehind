@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brief · Max Maufe · Unbehind</title>
+<title>Brief · Max Maufe · Post-call · Unbehind</title>
 
-<meta name="description" content="Pre-call brief for Max Maufe. Headhunter looking for more leads. Questions I'll ask, AI builds I'm thinking about, next steps.">
+<meta name="description" content="Post-call brief for Max Maufe. Summary of what we agreed and a short form for the bits I still need before I can start building.">
 <meta name="robots" content="noindex,nofollow">
 
 <meta name="theme-color" content="#0A0A0B">
@@ -145,8 +145,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--grad-2);
-    box-shadow: 0 0 10px var(--grad-2);
+    background: var(--grad-3);
+    box-shadow: 0 0 10px var(--grad-3);
   }
 
   h1 {
@@ -241,88 +241,45 @@
   }
   p strong, li strong { color: var(--ink); font-weight: 500; }
 
-  /* known-knowns card */
-  .know-card {
+  /* agreed-list card */
+  .agreed-card {
     background: var(--bg-surface);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 22px 24px;
+    padding: 24px 26px;
     margin-top: 16px;
   }
-  .know-card ul {
+  .agreed-card ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 14px;
   }
-  .know-card li {
+  .agreed-card li {
     padding-left: 22px;
     position: relative;
     color: var(--ink);
-    font-size: 14.5px;
+    font-size: 15px;
+    line-height: 1.55;
   }
-  .know-card li::before {
+  .agreed-card li::before {
     content: '\2713';
     position: absolute;
     left: 0;
     color: var(--grad-3);
     font-size: 12px;
-    top: 2px;
+    top: 3px;
   }
+  .agreed-card li strong { color: var(--ink); font-weight: 500; }
+  .agreed-card li span.note { display: block; color: var(--ink-soft); font-size: 13.5px; margin-top: 2px; }
 
-  /* question groups */
-  .qgroup {
-    margin-top: 28px;
-  }
-  .qgroup h3 {
-    font-family: 'Geist', sans-serif;
-    font-weight: 500;
-    font-size: 17px;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-  }
-  .qgroup h3 .letter {
-    font-family: 'Geist Mono', monospace;
-    font-size: 12px;
-    color: var(--ink-mute);
-    background: rgba(255, 255, 255, 0.04);
-    padding: 3px 8px;
-    border-radius: 4px;
-    letter-spacing: 0.04em;
-  }
-
-  .qgroup ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-left: 0;
-  }
-  .qgroup ul li {
-    padding-left: 18px;
-    position: relative;
-    font-size: 15px;
-  }
-  .qgroup ul li::before {
-    content: '\2014';
-    position: absolute;
-    left: 0;
-    color: var(--grad-2);
-    font-weight: 500;
-  }
-
-  /* build idea cards */
+  /* build component cards */
   .build-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-top: 16px;
   }
-
   .build {
     background: var(--bg-surface);
     border: 1px solid var(--border);
@@ -332,7 +289,6 @@
     gap: 18px;
     align-items: flex-start;
   }
-
   .build-num {
     flex-shrink: 0;
     width: 32px;
@@ -347,9 +303,7 @@
     font-size: 13px;
     color: var(--accent);
   }
-
   .build-body { min-width: 0; flex: 1; }
-
   .build h4 {
     font-family: 'Geist', sans-serif;
     font-weight: 500;
@@ -358,12 +312,157 @@
     color: var(--ink);
     margin-bottom: 6px;
   }
-
   .build p {
     font-size: 14.5px;
     line-height: 1.55;
     color: var(--ink-soft);
   }
+
+  /* test-case callout */
+  .testcase {
+    background: linear-gradient(165deg, rgba(167, 139, 250, 0.08), rgba(240, 171, 161, 0.04) 60%, transparent);
+    border: 1px solid rgba(167, 139, 250, 0.20);
+    border-radius: 16px;
+    padding: 28px;
+    margin-top: 16px;
+  }
+  .testcase h4 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    letter-spacing: -0.015em;
+  }
+  .testcase p { color: var(--ink-soft); font-size: 15px; margin-bottom: 10px; }
+  .testcase ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+  .testcase li {
+    padding-left: 20px;
+    position: relative;
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+  .testcase li::before {
+    content: '\2192';
+    position: absolute;
+    left: 0;
+    color: var(--grad-2);
+    font-weight: 500;
+  }
+
+  /* ============ FORM ============ */
+
+  form {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .field label {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 15.5px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .field label .num {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 3px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+  .field .helper {
+    font-size: 13.5px;
+    color: var(--ink-mute);
+    line-height: 1.5;
+    margin-top: -2px;
+  }
+
+  textarea {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--ink);
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+    min-height: 96px;
+    resize: vertical;
+    width: 100%;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  textarea:focus {
+    outline: none;
+    border-color: var(--accent-mute);
+    background: var(--bg-elevated);
+  }
+  textarea::placeholder {
+    color: var(--ink-mute);
+    opacity: 0.7;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn:hover {
+    background: #fff;
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--border-hi);
+  }
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--ink);
+    transform: none;
+  }
+
+  .copy-status {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--grad-3);
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .copy-status.show { opacity: 1; }
 
   /* numbered next-steps */
   .steps {
@@ -395,63 +494,6 @@
     border-radius: 6px;
   }
 
-  /* CTA */
-  .cta-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 40px 32px;
-    margin-top: 56px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-card::before {
-    content: '';
-    position: absolute;
-    top: -40%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 200%;
-    background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(167, 139, 250, 0.12), transparent 70%);
-    pointer-events: none;
-  }
-  .cta-card > * { position: relative; z-index: 1; }
-
-  .cta-card h2 {
-    margin: 0 auto 16px;
-    max-width: 22ch;
-  }
-
-  .cta-note {
-    font-size: 15px;
-    color: var(--ink-soft);
-    margin: 0 auto 24px;
-    max-width: 460px;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 22px;
-    border-radius: 999px;
-    font-family: 'Geist', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.005em;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
-    background: var(--ink);
-    color: var(--bg);
-  }
-  .btn:hover {
-    background: #fff;
-    transform: translateY(-1px);
-  }
-
   /* footer */
   footer {
     max-width: 720px;
@@ -476,8 +518,8 @@
     main { padding: 24px 20px 80px; }
     nav.top { padding: 18px 20px; }
     section { margin-bottom: 44px; }
-    .build { flex-direction: row; padding: 18px 20px; }
-    .cta-card { padding: 32px 20px; }
+    .build { padding: 18px 20px; }
+    .testcase { padding: 22px 20px; }
     footer { padding: 24px 20px; }
   }
 </style>
@@ -491,188 +533,224 @@
 
 <main>
 
-  <div class="eyebrow">Pre-call brief</div>
+  <div class="eyebrow">Post-call · 14 May</div>
 
-  <h1>Hi Max. Read this <span class="grad">before our call.</span></h1>
+  <h1>Hi Max. <span class="grad">Here&rsquo;s where we landed.</span></h1>
 
-  <p class="intro">A short page to keep us aligned before the brief call. Should take you about 10 minutes. Jot anything down as you go &mdash; bring your reactions on Zoom.</p>
+  <p class="intro">Short recap of what we agreed, the build I&rsquo;m planning, and a six-question form for the bits I still need before I can start. Should take you 10 minutes.</p>
 
-  <p class="intro">The call has two jobs: (1) understand your business well enough that I can spot the AI flows that&rsquo;d actually move the needle, and (2) agree on the first thing we&rsquo;d build together.</p>
+  <p class="meta-line">Family stuff allowed to interrupt.</p>
 
-  <p class="meta-line">30 minutes · Free · Zoom link to follow</p>
-
-  <!-- ===== WHAT I KNOW ===== -->
+  <!-- ===== WHAT WE AGREED ===== -->
   <section>
-    <div class="section-tag">What I already know</div>
-    <h2>The starting point.</h2>
-    <p>This is what I&rsquo;m bringing into the call &mdash; correct me where I&rsquo;m wrong, fill the gaps where I&rsquo;m thin.</p>
-    <div class="know-card">
+    <div class="section-tag">What we agreed</div>
+    <h2>The shape of the <span class="grad">deal.</span></h2>
+    <p>Reads roughly like this. Push back on anything I&rsquo;ve mis-remembered.</p>
+    <div class="agreed-card">
       <ul>
-        <li>You&rsquo;re a headhunter</li>
-        <li>You want more leads</li>
-        <li>That&rsquo;s it &mdash; the rest is what we&rsquo;ll unpack</li>
+        <li><strong>Approach this as a test project, not a retainer.</strong><span class="note">You don&rsquo;t pay me a monthly fee on a hunch. We use a real role to prove the system works, then decide what comes next.</span></li>
+        <li><strong>I build an AI-powered sourcing + outreach funnel.</strong><span class="note">Takes the laborious bit &mdash; long-list building and first-touch outreach &mdash; out of your hands.</span></li>
+        <li><strong>You pay me a small upfront day-rate so it&rsquo;s not free labour.</strong><span class="note">Not thousands. Enough that I&rsquo;m motivated, not so much that you feel exposed. We agree the number once I&rsquo;ve scoped the build.</span></li>
+        <li><strong>If a candidate the system surfaces places, I take a small cut of the success fee.</strong><span class="note">Honour system. You tell me when one of mine lands. We agree the split once we&rsquo;ve seen the system work.</span></li>
+        <li><strong>I&rsquo;ll set you up on Granola so call notes capture themselves.</strong><span class="note">Free, takes 5 minutes. You stop losing every other detail from your 15-minute intro calls.</span></li>
+        <li><strong>Aim: have the system running before you&rsquo;re off for the baby.</strong><span class="note">So it&rsquo;s ready to test properly when you&rsquo;re back in September.</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- ===== QUESTIONS ===== -->
+  <!-- ===== THE BUILD ===== -->
   <section>
-    <div class="section-tag">Questions I&rsquo;ll ask</div>
-    <h2>The seven things I need to <span class="grad">understand.</span></h2>
-    <p>Don&rsquo;t pre-write answers &mdash; just have them in your head. We&rsquo;ll move quickly.</p>
-
-    <div class="qgroup">
-      <h3><span class="letter">A</span> The business</h3>
-      <ul>
-        <li>What sectors and seniority do you recruit in?</li>
-        <li>Retained, contingent, or both?</li>
-        <li>Solo, or with a team / assistants / researchers?</li>
-        <li>Rough numbers: average placement fee, placements per month, run-rate.</li>
-      </ul>
-    </div>
-
-    <div class="qgroup">
-      <h3><span class="letter">B</span> &lsquo;More leads&rsquo; &mdash; which kind?</h3>
-      <ul>
-        <li>Candidates (people to place), clients (companies who&rsquo;ll hire), or both?</li>
-        <li>If you had to pick one as the bigger bottleneck right now &mdash; which?</li>
-        <li>What does &lsquo;a lead&rsquo; mean for you? A name? A meeting? A signed JD?</li>
-      </ul>
-    </div>
-
-    <div class="qgroup">
-      <h3><span class="letter">C</span> How leads come in today</h3>
-      <ul>
-        <li>Candidates: LinkedIn Recruiter, referrals, inbound, your own database?</li>
-        <li>Clients: cold outreach, referrals, content, network, BD partner?</li>
-        <li>What&rsquo;s actually working? What&rsquo;s broken or feels embarrassing?</li>
-        <li>If a lead came in tomorrow, walk me through what happens in the first hour.</li>
-      </ul>
-    </div>
-
-    <div class="qgroup">
-      <h3><span class="letter">D</span> Your week</h3>
-      <ul>
-        <li>Where does the time actually go? Hours on sourcing, outreach, calls, admin.</li>
-        <li>Which task do you most wish you didn&rsquo;t have to do?</li>
-        <li>Which task do you wish you had more time for &mdash; and what stops you?</li>
-      </ul>
-    </div>
-
-    <div class="qgroup">
-      <h3><span class="letter">E</span> Tools and data</h3>
-      <ul>
-        <li>ATS / CRM stack? (Bullhorn, Loxo, Vincere, Recruit CRM, Notion, spreadsheet?)</li>
-        <li>LinkedIn Recruiter or Sales Navigator? Other paid sourcing tools?</li>
-        <li>What data is already sitting around &mdash; old CV piles, past candidate lists, BD notes?</li>
-        <li>Anything compliance-wise to know upfront (GDPR on candidate data, exclusivity clauses)?</li>
-      </ul>
-    </div>
-
-    <div class="qgroup">
-      <h3><span class="letter">F</span> What good looks like</h3>
-      <ul>
-        <li>If we double your lead flow next quarter &mdash; what does that mean? Volume? Quality? Fees?</li>
-        <li>One number that, if it moved, would feel like a real win.</li>
-        <li>What would &lsquo;great&rsquo; look like by the end of the year if this works?</li>
-      </ul>
-    </div>
-
-    <div class="qgroup">
-      <h3><span class="letter">G</span> Constraints</h3>
-      <ul>
-        <li>Budget &mdash; Setup at &pound;500 to start, or thinking about retainer from day one?</li>
-        <li>Timeline &mdash; when do you want the first thing live?</li>
-        <li>Anything off-limits? (Data you can&rsquo;t share, tools you can&rsquo;t touch, ways of working you won&rsquo;t accept.)</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== INITIAL BUILDS ===== -->
-  <section>
-    <div class="section-tag">What I&rsquo;m already thinking about</div>
-    <h2>Six flows that might fit a <span class="grad">headhunter.</span></h2>
-    <p>These are just starting points. You don&rsquo;t have to react to all of them &mdash; pick the ones that sound right, kill the ones that don&rsquo;t. The shortlist comes out of the call, not out of this page.</p>
+    <div class="section-tag">The build</div>
+    <h2>Four components. One <span class="grad">funnel.</span></h2>
+    <p>This is what I&rsquo;d build for you. We can ship them in this order &mdash; get the first one working, bolt on the next.</p>
 
     <div class="build-list">
 
       <div class="build">
         <div class="build-num">01</div>
         <div class="build-body">
-          <h4>Candidate sourcing scraper</h4>
-          <p>You define the niche; the system pulls 30-50 new candidates each morning from LinkedIn with role, location, current company, and a signal that they might move. Lands in a spreadsheet or your inbox.</p>
+          <h4>Long-list builder</h4>
+          <p>I take a JD (or just your search terms) and the system runs a deep search across LinkedIn, public data and a few signals you can&rsquo;t see manually. Returns 50-100 candidates with role, location, current company, and a flag for &lsquo;might be open to move.&rsquo; The bit that currently eats 3-4 days of your week.</p>
         </div>
       </div>
 
       <div class="build">
         <div class="build-num">02</div>
         <div class="build-body">
-          <h4>Outreach personaliser</h4>
-          <p>Paste a candidate profile, get a first-message draft in your voice in under 30 seconds. Trained on your best historical outreach. Works for ten at a time.</p>
+          <h4>Personalised outreach</h4>
+          <p>For each candidate, the system drafts a first LinkedIn message in your voice &mdash; not generic, references something specific from their profile. You skim, send, or edit before sending. Ten messages instead of typing the same one fifty times.</p>
         </div>
       </div>
 
       <div class="build">
         <div class="build-num">03</div>
         <div class="build-body">
-          <h4>Client target list (overnight)</h4>
-          <p>Companies hiring in your niche, scraped from job boards every night and ranked by likelihood-to-engage-a-headhunter. With the hiring manager&rsquo;s contact where we can find it.</p>
+          <h4>Reply tracking + follow-up nudges</h4>
+          <p>The system watches who replies, moves them down the funnel, and nudges you to follow up with the ones who haven&rsquo;t. No more &lsquo;did I chase that guy?&rsquo; sitting in the back of your head.</p>
         </div>
       </div>
 
       <div class="build">
         <div class="build-num">04</div>
         <div class="build-body">
-          <h4>JD-to-shortlist matcher</h4>
-          <p>Paste a job description, get a ranked shortlist from your existing database (or LinkedIn) with a one-paragraph reason for each match. Cuts the &lsquo;who do I have for this?&rsquo; step from 90 minutes to 5.</p>
-        </div>
-      </div>
-
-      <div class="build">
-        <div class="build-num">05</div>
-        <div class="build-body">
-          <h4>CV parser + searchable database</h4>
-          <p>Drop any CV in, structured data out, deduped against your database. Searchable in plain English &mdash; &ldquo;show me UK-based fintech CTOs who&rsquo;ve raised Series A.&rdquo;</p>
-        </div>
-      </div>
-
-      <div class="build">
-        <div class="build-num">06</div>
-        <div class="build-body">
-          <h4>Daily market signal digest</h4>
-          <p>Overnight scrape of funding rounds, exec moves, layoffs and new senior hires in your niche. Lands in your inbox at 7am with the &lsquo;who to call this morning&rsquo; list.</p>
+          <h4>Granola for the calls</h4>
+          <p>Free tool, set up in 5 minutes. Sits in the background of your Zoom calls, records, gives you a clean summary and a follow-up email draft after every call. You stop forgetting which Swedish CTO said what.</p>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ===== NEXT STEPS ===== -->
+  <!-- ===== TEST CASE ===== -->
   <section>
-    <div class="section-tag">After the brief call</div>
-    <h2>How this goes from here.</h2>
-    <ol class="steps">
-      <li>We do the 30-min Zoom. I take notes. You tell me where I&rsquo;m wrong.</li>
-      <li>If it&rsquo;s a fit, I write up the build spec the same day and send it over.</li>
-      <li>You approve the spec. I go away and design + build (5-7 days, offline).</li>
-      <li>We jump on a 60-90 min integration call. I plumb it into your business, you watch it work, we fix what&rsquo;s broken.</li>
-      <li>You leave with a working tool. We either stop there, or move to a monthly retainer.</li>
-    </ol>
+    <div class="section-tag">The test case</div>
+    <h2>Swedish telco. Head of <span class="grad">Sales.</span></h2>
+    <p>This is the role we agreed to use as the proof. Reasons it&rsquo;s a good test case:</p>
+    <div class="testcase">
+      <h4>Why this one</h4>
+      <p>It&rsquo;s a live brief, you know the market, and you can tell within a week whether the long list and the outreach are landing on the right kind of person.</p>
+      <ul>
+        <li>You&rsquo;d normally spend 3-4 solid days building the long list manually</li>
+        <li>Goal: cut that to a few hours and a higher hit rate</li>
+        <li>Estimated placement fee: ~&pound;30k</li>
+        <li>You&rsquo;re ahead of the brief landing &mdash; the head start is the whole point</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- ===== CTA ===== -->
-  <div class="cta-card">
-    <h2>Got everything you need?</h2>
-    <p class="cta-note">Reply to my last email with two or three times that work this week, or grab a slot on the Zoom invite when it lands. Anything you want to send ahead of the call, just forward it.</p>
-    <a href="mailto:hello@unbehind.ai?subject=Brief%20call%20%E2%80%94%20Max%20Maufe&body=Hi%20James%2C%0A%0AThree%20times%20that%20work%20for%20me%20this%20week%3A%0A%0A1.%20%0A2.%20%0A3.%20%0A%0AStuff%20I%27d%20want%20to%20send%20ahead%20of%20the%20call%3A%0A%0A" class="btn">Reply with times &nbsp;→</a>
-  </div>
+  <!-- ===== FORM ===== -->
+  <section>
+    <div class="section-tag">What I still need from you</div>
+    <h2>Six questions. <span class="grad">10 minutes.</span></h2>
+    <p>Fill these in, hit send. Anything you don&rsquo;t know yet, just type &lsquo;tbc&rsquo; &mdash; we can fill the gaps on the next call.</p>
+
+    <form id="brief-form" onsubmit="return false;">
+
+      <div class="field">
+        <label><span class="num">01</span> The Swedish telco role &mdash; everything you know</label>
+        <p class="helper">Company name if you can share, salary band, must-haves, deal-breakers, timeline. Doesn&rsquo;t need to be polished &mdash; brain-dump is fine.</p>
+        <textarea id="f-role" placeholder="e.g. Mid-cap Swedish telco, ~150k SEK base, 5+ years sales leadership, fluent Swedish + English, Stockholm-based. Replacing current head Q3..."></textarea>
+      </div>
+
+      <div class="field">
+        <label><span class="num">02</span> Search terms you&rsquo;d normally use on LinkedIn</label>
+        <p class="helper">The keywords, job titles, industries, locations you&rsquo;d type into LinkedIn to find candidates for this role. I&rsquo;ll use these as the seed.</p>
+        <textarea id="f-search" placeholder="e.g. Head of Sales / VP Sales / Sales Director · telco / telecom / SaaS B2B · Sweden / Stockholm / Gothenburg · 10+ years..."></textarea>
+      </div>
+
+      <div class="field">
+        <label><span class="num">03</span> Two or three placements you&rsquo;ve done well at this level</label>
+        <p class="helper">Names or LinkedIn URLs of people you&rsquo;ve placed (or wish you had). Helps me train the system on what &lsquo;right&rsquo; looks like to you.</p>
+        <textarea id="f-placements" placeholder="e.g. Lars Andersson, ex-Telia, placed at Tele2 in 2023 — linkedin.com/in/..."></textarea>
+      </div>
+
+      <div class="field">
+        <label><span class="num">04</span> Your current LinkedIn outreach &mdash; paste it raw</label>
+        <p class="helper">Whatever first message you&rsquo;d normally send. Doesn&rsquo;t have to be your finest work. The system needs to learn your voice.</p>
+        <textarea id="f-outreach" placeholder="e.g. Hi [name], I&rsquo;m working on a discreet search for a Head of Sales role at a Swedish telco. Saw your background at [company] and thought you might be a fit. Worth a 15-minute call?"></textarea>
+      </div>
+
+      <div class="field">
+        <label><span class="num">05</span> What you&rsquo;re using right now</label>
+        <p class="helper">CRM (if any), spreadsheet setup, LinkedIn tier (Recruiter, Sales Nav, free), email, anything else I should plumb into.</p>
+        <textarea id="f-tools" placeholder="e.g. Excel for the candidate list, LinkedIn Recruiter Lite, Gmail. No CRM yet. ChatGPT for research."></textarea>
+      </div>
+
+      <div class="field">
+        <label><span class="num">06</span> Timing + a comfortable upfront figure</label>
+        <p class="helper">When you want to start. And what feels right for an upfront fee &mdash; motivated for me, not painful for you.</p>
+        <textarea id="f-budget" placeholder="e.g. Start mid-June so it&rsquo;s ready when I&rsquo;m back in September. Comfortable with around &pound;X for the build. Open to a small success cut if it places."></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn" onclick="sendBrief()">Email me your answers &nbsp;→</button>
+        <button type="button" class="btn btn-ghost" onclick="copyBrief()">Copy to clipboard</button>
+      </div>
+      <div id="copy-status" class="copy-status"></div>
+
+    </form>
+  </section>
+
+  <!-- ===== NEXT STEPS ===== -->
+  <section>
+    <div class="section-tag">Then I go away</div>
+    <h2>How this goes from here.</h2>
+    <ol class="steps">
+      <li>You fill in the form above. I get an email.</li>
+      <li>I write up a tight build spec &mdash; one page, clear scope, exact deliverables, the upfront number we agree.</li>
+      <li>You approve it or push back on it.</li>
+      <li>I go away and build &mdash; 5-7 days, in the evenings.</li>
+      <li>We jump on a second Zoom and I show you the working funnel running against the Swedish telco brief. We iterate from there.</li>
+    </ol>
+  </section>
 
 </main>
 
 <footer>
   <div>Unbehind · For Max Maufe · Private brief</div>
-  <div><a href="mailto:hello@unbehind.ai">hello@unbehind.ai</a></div>
+  <div><a href="mailto:jamesharrop@gmail.com">jamesharrop@gmail.com</a></div>
 </footer>
+
+<script>
+  function buildBody() {
+    const role       = document.getElementById('f-role').value.trim();
+    const search     = document.getElementById('f-search').value.trim();
+    const placements = document.getElementById('f-placements').value.trim();
+    const outreach   = document.getElementById('f-outreach').value.trim();
+    const tools      = document.getElementById('f-tools').value.trim();
+    const budget     = document.getElementById('f-budget').value.trim();
+
+    return [
+      'Hi James — answers from the brief page.',
+      '',
+      '— THE SWEDISH TELCO ROLE —',
+      role || '(blank)',
+      '',
+      '— SEARCH TERMS I\'D USE —',
+      search || '(blank)',
+      '',
+      '— PAST PLACEMENTS AT THIS LEVEL —',
+      placements || '(blank)',
+      '',
+      '— MY CURRENT OUTREACH —',
+      outreach || '(blank)',
+      '',
+      '— TOOLS I\'M USING —',
+      tools || '(blank)',
+      '',
+      '— TIMING + UPFRONT FIGURE —',
+      budget || '(blank)',
+      '',
+      '—',
+      'Max'
+    ].join('\n');
+  }
+
+  function sendBrief() {
+    const body = buildBody();
+    const subject = 'Max Maufe — brief form answers';
+    const mailto = 'mailto:jamesharrop@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = mailto;
+  }
+
+  async function copyBrief() {
+    const body = buildBody();
+    const status = document.getElementById('copy-status');
+    try {
+      await navigator.clipboard.writeText(body);
+    } catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = body;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    status.textContent = 'Copied. Paste into an email to jamesharrop@gmail.com.';
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 4000);
+  }
+</script>
 
 </body>
 </html>
