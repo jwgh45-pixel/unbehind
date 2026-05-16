@@ -412,6 +412,17 @@
     margin-right: -0.08em;
   }
   .money-row .amount.muted { color: var(--ink-soft); font-size: 18px; }
+  .money-row .amount .strike {
+    text-decoration: line-through;
+    color: var(--ink-mute);
+    -webkit-text-fill-color: var(--ink-mute);
+    font-size: 15px;
+    font-style: normal;
+    letter-spacing: -0.01em;
+    margin-right: 10px;
+    vertical-align: 2px;
+    background: none;
+  }
 
   .tool-row {
     display: flex;
@@ -728,8 +739,8 @@
 
     <div class="money">
       <div class="money-row">
-        <div class="label">Phase 1 build fee<span class="sub">Covers my evenings (roughly a day&rsquo;s work) &mdash; Sales Nav setup, the personalisation script, the first list, Attio, Granola, Loom.</span></div>
-        <div class="amount grad-text">&pound;350</div>
+        <div class="label">Phase 1 build fee<span class="sub">Founding client rate &mdash; this build only. Sales Nav setup, personalisation script, first long list, Attio workspace, Granola install, Loom walkthrough.</span></div>
+        <div class="amount grad-text"><span class="strike">&pound;500</span>&pound;275</div>
       </div>
       <div class="money-row">
         <div class="label">Success fee on placement<span class="sub">Flat &pound;1k only if a candidate the system surfaced gets placed. Honour system &mdash; you tell me.</span></div>
@@ -766,7 +777,7 @@
         <div class="cost">Free</div>
       </div>
       <div class="tool-row">
-        <div class="name">Claude API for personalisation<span class="sub">Bundled into the &pound;350. You don&rsquo;t see this cost.</span></div>
+        <div class="name">Claude API for personalisation<span class="sub">Bundled into the &pound;275. You don&rsquo;t see this cost.</span></div>
         <div class="cost">Included</div>
       </div>
     </div>
