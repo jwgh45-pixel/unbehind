@@ -725,17 +725,21 @@
 
     <div class="money">
       <div class="money-row">
-        <div class="label">Phase 1 build fee<span class="sub">Covers my evenings, the Sales Nav setup, the personalisation script, the first list, Attio, Granola, Loom.</span></div>
-        <div class="amount grad-text">&pound;500</div>
+        <div class="label">Phase 1 build fee<span class="sub">Covers my evenings (roughly a day&rsquo;s work) &mdash; Sales Nav setup, the personalisation script, the first list, Attio, Granola, Loom.</span></div>
+        <div class="amount grad-text">&pound;350</div>
       </div>
       <div class="money-row">
-        <div class="label">Success cut on placement<span class="sub">5% of the placement fee, only on candidates the system surfaced. ~&pound;1,500 on a &pound;30k placement.</span></div>
-        <div class="amount muted">5%</div>
+        <div class="label">Success fee on placement<span class="sub">Flat &pound;1k only if a candidate the system surfaced gets placed. Honour system &mdash; you tell me.</span></div>
+        <div class="amount muted">&pound;1,000</div>
       </div>
     </div>
 
-    <p style="margin-top:24px;font-size:14px;color:var(--ink-mute);">
-      Honour system on the success cut &mdash; you tell me when a system candidate places. We agree the cut on the second role only if Phase 1 actually delivers replies and a shortlist.
+    <p style="margin-top:24px;font-size:14px;color:var(--ink-mute);line-height:1.65;">
+      <strong style="color:var(--ink);font-weight:500;">On the success fee:</strong> &pound;1k is the starting number &mdash; clean, low-risk, easy to say yes to. Once we&rsquo;ve seen Phase 1 actually deliver (replies, a shortlist, ideally a placement), we&rsquo;d negotiate a percentage structure for future roles &mdash; 5% being the opening number, which would be ~&pound;1.5k on a &pound;30k placement anyway. Open conversation, not a fixed contract.
+    </p>
+
+    <p style="margin-top:18px;font-size:14px;color:var(--ink-mute);line-height:1.65;">
+      <strong style="color:var(--ink);font-weight:500;">A note on time:</strong> Phase 1 is also our calibration project. I&rsquo;ll track how long each step actually takes me &mdash; useful for both of us when we decide what Phase 2 or a future retainer should cost. No surprises later.
     </p>
   </section>
 
@@ -759,7 +763,7 @@
         <div class="cost">Free</div>
       </div>
       <div class="tool-row">
-        <div class="name">Claude API for personalisation<span class="sub">Bundled into the &pound;500. You don&rsquo;t see this cost.</span></div>
+        <div class="name">Claude API for personalisation<span class="sub">Bundled into the &pound;350. You don&rsquo;t see this cost.</span></div>
         <div class="cost">Included</div>
       </div>
     </div>
@@ -778,7 +782,7 @@
         <div class="ladder-body">
           <h4>Auto-send via Heyreach</h4>
           <p>The system sends the personalised messages for you, paced through the day so LinkedIn doesn&rsquo;t flag anything. You stop touching the manual send step.</p>
-          <span class="cost">+&pound;400 build &middot; +&pound;100/mo tool</span>
+          <span class="cost">Setup fee TBC &middot; +&pound;100/mo tool</span>
         </div>
       </div>
 
@@ -787,7 +791,7 @@
         <div class="ladder-body">
           <h4>Add email channel</h4>
           <p>Some senior people don&rsquo;t check LinkedIn DMs. Plug in Apollo for verified emails + Instantly for cold-email sending. Roughly doubles reach per role.</p>
-          <span class="cost">+&pound;400 build &middot; +&pound;110/mo tools</span>
+          <span class="cost">Setup fee TBC &middot; +&pound;110/mo tools</span>
         </div>
       </div>
 
@@ -806,12 +810,12 @@
       <div class="field">
         <label for="tweak">Anything to change?</label>
         <p class="helper">Optional. Push back on the money, the scope, the timing &mdash; anything. Leave blank if you&rsquo;re happy.</p>
-        <textarea id="tweak" placeholder="e.g. Happy with everything but let's start mid-June not this Monday. Or: keep the build fee but I'd want 4% on placement not 5%..."></textarea>
+        <textarea id="tweak" placeholder="e.g. Happy with everything but let's start mid-June not this Monday. Or: keep the build fee but want to discuss the &pound;1k success fee structure..."></textarea>
       </div>
 
       <div class="approve-actions">
         <button type="button" class="btn" onclick="approveProposal()">I&rsquo;m in. Crack on &nbsp;→</button>
-        <button type="button" class="btn-ghost btn" onclick="discussFirst()">Want to discuss first</button>
+        <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn-ghost btn">Book 30 min to discuss &nearr;</a>
       </div>
       <div id="reply-status" class="reply-status"></div>
     </div>
@@ -842,22 +846,6 @@
     const status = document.getElementById('reply-status');
     status.textContent = 'Your email app should have opened. If not, just email jamesharrop@gmail.com to confirm.';
     status.classList.add('show');
-  }
-
-  function discussFirst() {
-    const tweak = document.getElementById('tweak').value.trim();
-    const subject = 'Max Maufe — want to discuss the proposal';
-    const body = [
-      'Hi James,',
-      '',
-      'Want to talk through the proposal before approving. Bits I want to discuss:',
-      '',
-      tweak || '(blank — I&rsquo;ll explain on the call)',
-      '',
-      '— Max'
-    ].join('\n');
-    const mailto = 'mailto:jamesharrop@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    window.location.href = mailto;
   }
 </script>
 
