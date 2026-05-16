@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposal · Max Maufe · GlobalConnect Phase 1 · Unbehind</title>
+
+<meta name="description" content="Phase 1 proposal for Max Maufe. GlobalConnect Sweden Head of Sales test project. Scope, timeline, money, approve.">
+<meta name="robots" content="noindex,nofollow">
+
+<meta name="theme-color" content="#0A0A0B">
+<meta name="color-scheme" content="dark">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:          #0A0A0B;
+    --bg-surface:  #121214;
+    --bg-elevated: #1A1A1D;
+    --ink:         #F5F5F4;
+    --ink-soft:    #A8A8A5;
+    --ink-mute:    #6E6E6B;
+    --border:      rgba(255, 255, 255, 0.08);
+    --border-soft: rgba(255, 255, 255, 0.05);
+    --border-hi:   rgba(255, 255, 255, 0.14);
+
+    --grad-1: #A78BFA;
+    --grad-2: #F0ABA1;
+    --grad-3: #7DD3C0;
+
+    --accent:      #C7B9FF;
+    --accent-mute: #8B7FD1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.005em;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120vw;
+    height: 90vh;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 30%, rgba(167, 139, 250, 0.18), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 75% 40%, rgba(240, 171, 161, 0.14), transparent 70%),
+      radial-gradient(ellipse 60% 45% at 50% 80%, rgba(125, 211, 192, 0.10), transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ============ NAV ============ */
+
+  nav.top {
+    padding: 22px 28px;
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .wordmark {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .wordmark::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
+    filter: saturate(0.9) brightness(1.05);
+  }
+
+  .nav-meta {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  /* ============ CONTAINER ============ */
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 28px 120px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    padding: 7px 14px 7px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 28px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--grad-1);
+    box-shadow: 0 0 10px var(--grad-1);
+  }
+
+  h1 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4.2vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  h1 .grad {
+    background: linear-gradient(110deg, var(--grad-1) 0%, var(--grad-2) 50%, var(--grad-3) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    font-weight: 400;
+    display: inline-block;
+    padding: 0.05em 0.12em 0.05em 0.02em;
+    margin: -0.05em -0.12em -0.05em -0.02em;
+    line-height: 1.12;
+  }
+
+  .intro {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  .intro strong { color: var(--ink); font-weight: 500; }
+
+  .meta-line {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-mute);
+    margin-bottom: 56px;
+  }
+
+  /* ============ SECTIONS ============ */
+
+  section {
+    margin-bottom: 56px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-tag::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: var(--ink-mute);
+  }
+
+  h2 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: clamp(24px, 3.2vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  h2 .grad {
+    background: linear-gradient(110deg, var(--grad-1), var(--grad-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    display: inline-block;
+    padding: 0.05em 0.12em 0.05em 0.02em;
+    margin: -0.05em -0.12em -0.05em -0.02em;
+    line-height: 1.18;
+  }
+
+  p, li {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  p strong, li strong { color: var(--ink); font-weight: 500; }
+
+  /* check-list card (gets) */
+  .check-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 26px;
+    margin-top: 16px;
+  }
+  .check-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .check-card li {
+    padding-left: 26px;
+    position: relative;
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .check-card li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--grad-3);
+    font-size: 13px;
+    top: 3px;
+    background: rgba(125, 211, 192, 0.12);
+    border: 1px solid rgba(125, 211, 192, 0.25);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+  }
+  .check-card li strong { color: var(--ink); font-weight: 500; }
+  .check-card li span.note { display: block; color: var(--ink-soft); font-size: 13.5px; margin-top: 2px; }
+
+  /* timeline */
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 16px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    left: 12px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--grad-1), var(--grad-2), var(--grad-3));
+    opacity: 0.35;
+  }
+  .timeline-item {
+    padding: 16px 0 16px 44px;
+    position: relative;
+    border-top: 1px solid var(--border-soft);
+  }
+  .timeline-item:first-child { border-top: none; padding-top: 0; }
+  .timeline-marker {
+    position: absolute;
+    left: 4px;
+    top: 22px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+  .timeline-item:first-child .timeline-marker { top: 4px; }
+  .timeline-item .day {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .timeline-item h4 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .timeline-item p {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* what-you-do list */
+  .do-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .do-list li {
+    padding-left: 22px;
+    position: relative;
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .do-list li::before {
+    content: '\2192';
+    position: absolute;
+    left: 0;
+    color: var(--grad-2);
+    font-weight: 500;
+  }
+
+  /* MONEY callout */
+  .money {
+    background: linear-gradient(165deg, rgba(167, 139, 250, 0.10), rgba(125, 211, 192, 0.04) 60%, transparent);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    border-radius: 18px;
+    padding: 32px 30px;
+    margin-top: 16px;
+  }
+  .money-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-soft);
+    gap: 16px;
+  }
+  .money-row:first-child { padding-top: 0; }
+  .money-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .money-row .label {
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 15.5px;
+    letter-spacing: -0.01em;
+  }
+  .money-row .label .sub {
+    display: block;
+    color: var(--ink-soft);
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 2px;
+    letter-spacing: 0;
+  }
+  .money-row .amount {
+    font-family: 'Geist', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .money-row .amount.grad-text {
+    background: linear-gradient(110deg, var(--grad-1), var(--grad-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+  }
+  .money-row .amount.muted { color: var(--ink-soft); font-size: 18px; }
+
+  .tool-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 14.5px;
+  }
+  .tool-row:last-child { border-bottom: none; }
+  .tool-row .name { color: var(--ink); }
+  .tool-row .name .sub { display: block; color: var(--ink-mute); font-size: 12.5px; margin-top: 2px; }
+  .tool-row .cost { font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--ink-soft); white-space: nowrap; }
+
+  /* Phase 2/3 ladder */
+  .ladder-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .ladder {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .ladder-tag {
+    flex-shrink: 0;
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 4px 9px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+  }
+  .ladder-body { flex: 1; min-width: 0; }
+  .ladder h4 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 15.5px;
+    color: var(--ink);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .ladder p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
+  .ladder .cost {
+    display: block;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-mute);
+    margin-top: 6px;
+  }
+
+  /* ============ APPROVE FORM ============ */
+
+  .approve-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-hi);
+    border-radius: 20px;
+    padding: 40px 32px;
+    margin-top: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .approve-card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(167, 139, 250, 0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .approve-card > * { position: relative; z-index: 1; }
+
+  .approve-card h3 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.015em;
+  }
+  .approve-card p.lead {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+
+  .field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+  .field label {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 14.5px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .field .helper { font-size: 13px; color: var(--ink-mute); line-height: 1.5; margin-top: -2px; }
+  textarea {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: var(--ink);
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+    min-height: 80px;
+    resize: vertical;
+    width: 100%;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  textarea:focus {
+    outline: none;
+    border-color: var(--accent-mute);
+    background: var(--bg-elevated);
+  }
+  textarea::placeholder { color: var(--ink-mute); opacity: 0.7; }
+
+  .approve-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-family: 'Geist', sans-serif;
+    font-size: 15.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn:hover {
+    background: #fff;
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--border-hi);
+    padding: 14px 22px;
+    font-size: 14px;
+  }
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--ink);
+    transform: none;
+  }
+
+  .reply-status {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--grad-3);
+    margin-top: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .reply-status.show { opacity: 1; }
+
+  /* footer */
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 28px;
+    border-top: 1px solid var(--border-soft);
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer a { color: var(--ink-mute); }
+  footer a:hover { color: var(--ink); }
+
+  ::selection { background: var(--grad-1); color: var(--bg); }
+
+  @media (max-width: 560px) {
+    main { padding: 24px 20px 80px; }
+    nav.top { padding: 18px 20px; }
+    section { margin-bottom: 44px; }
+    .money { padding: 24px 22px; }
+    .approve-card { padding: 28px 22px; }
+    .money-row { flex-direction: column; gap: 6px; align-items: flex-start; }
+    .money-row .amount { font-size: 20px; }
+    footer { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a href="/" class="wordmark">Unbehind</a>
+  <div class="nav-meta">Proposal · For Max Maufe</div>
+</nav>
+
+<main>
+
+  <div class="eyebrow">Proposal · 15 May</div>
+
+  <h1>GlobalConnect Sweden. <span class="grad">Phase 1.</span></h1>
+
+  <p class="intro">This is what we agreed on the call, costed and scoped. Approve it at the bottom and I crack on this weekend.</p>
+
+  <p class="meta-line">One-page proposal. 5-minute read.</p>
+
+  <!-- ===== WHAT YOU GET ===== -->
+  <section>
+    <div class="section-tag">What you get</div>
+    <h2>An AI-powered <span class="grad">sourcing pipeline.</span></h2>
+    <p>End to end. Built for the GlobalConnect role first, reusable for every role after.</p>
+    <div class="check-card">
+      <ul>
+        <li><strong>A live Sales Navigator search</strong> for senior B2B sales leaders across your 21 target companies in Sweden &mdash; saved, filtered, ready to re-run for the next role.<span class="note">Includes both English and Swedish job titles (Försäljningschef, Försäljningsdirektör).</span></li>
+        <li><strong>A first long list of 50-80 candidates</strong> for GlobalConnect &mdash; current company, role, tenure, LinkedIn URL, signal flags for &lsquo;might be open to move.&rsquo;</li>
+        <li><strong>A personalised first LinkedIn message</strong> drafted for every candidate &mdash; references their actual career path, not &lsquo;Hi (name).&rsquo;<span class="note">Trained on your voice from the message you sent me. Sub-30 seconds to write each. You skim and approve before sending.</span></li>
+        <li><strong>An Attio workspace</strong> set up for you &mdash; candidates, target companies, role pipelines, kanban view by stage. Replaces the Excel.<span class="note">Free tier covers Phase 1. Stages: sourced, contacted, no-reply, replied, called, shortlist, offer, placed, dead.</span></li>
+        <li><strong>Granola installed</strong> on your laptop &mdash; sits in your Zoom calls, records, drops a clean summary and follow-up email draft in your inbox after every call.<span class="note">Free. 5 minutes to set up.</span></li>
+        <li><strong>A 15-minute Loom walkthrough</strong> &mdash; how to run the Sales Nav search, where the messages get drafted, how to update the Attio funnel. You own the workflow after Phase 1.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== TIMELINE ===== -->
+  <section>
+    <div class="section-tag">The build, by day</div>
+    <h2>One week of <span class="grad">evenings.</span></h2>
+    <p>Assumes we kick off Monday. I work in the evenings around the day job.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Mon &middot; Day 1</div>
+        <h4>Setup</h4>
+        <p>You upgrade LinkedIn to Sales Navigator Advanced (5 min, &pound;80/mo on your account). I build the saved search across your 21 target companies + Swedish + English search terms + Stockholm region.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Tue &middot; Day 2</div>
+        <h4>Personalisation script</h4>
+        <p>I build the AI script that reads a candidate&rsquo;s LinkedIn profile and drafts your first message. Trained on the &lsquo;Hi, I hope you are well&rsquo; message you sent me + the GlobalConnect role context.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Wed &middot; Day 3</div>
+        <h4>First long list</h4>
+        <p>I run the search, export to spreadsheet, push each candidate through the script. Output: 50-80 names with drafts. I quality-check the AI output and kill the duds before you see anything.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Thu &middot; Day 4</div>
+        <h4>Attio + Granola</h4>
+        <p>I build your Attio workspace and import the candidate list. Set up Granola on a quick call (5 min). Record the Loom walkthrough.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Fri &middot; Day 5</div>
+        <h4>Handover</h4>
+        <p>I send you the Loom, the spreadsheet, the Attio link. You sit down, open the list, send the 50-80 messages manually through LinkedIn. Roughly 30 minutes if you&rsquo;re quick.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Days 7-14</div>
+        <h4>Replies land</h4>
+        <p>You move people through the Attio kanban as they reply. Aim: 15-25% reply rate (vs the ~5-10% generic outreach gets). We jump on a 20-min review call to see what worked.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== WHAT YOU DO ===== -->
+  <section>
+    <div class="section-tag">What you do</div>
+    <h2>Four things. <span class="grad">Honestly that&rsquo;s it.</span></h2>
+    <ol class="do-list">
+      <li>Upgrade LinkedIn to Sales Navigator Advanced (5 min, &pound;80/mo on your account).</li>
+      <li>Spend 10 minutes scanning the long list with me and approving / killing duds.</li>
+      <li>Send the messages manually through LinkedIn &mdash; protects your account, ~30 minutes for 50 messages.</li>
+      <li>Update Attio as people reply (drag-and-drop kanban &mdash; takes seconds).</li>
+    </ol>
+  </section>
+
+  <!-- ===== MONEY ===== -->
+  <section>
+    <div class="section-tag">Money</div>
+    <h2>One number for the build. <span class="grad">One number on success.</span></h2>
+
+    <div class="money">
+      <div class="money-row">
+        <div class="label">Phase 1 build fee<span class="sub">Covers my evenings, the Sales Nav setup, the personalisation script, the first list, Attio, Granola, Loom.</span></div>
+        <div class="amount grad-text">&pound;500</div>
+      </div>
+      <div class="money-row">
+        <div class="label">Success cut on placement<span class="sub">5% of the placement fee, only on candidates the system surfaced. ~&pound;1,500 on a &pound;30k placement.</span></div>
+        <div class="amount muted">5%</div>
+      </div>
+    </div>
+
+    <p style="margin-top:24px;font-size:14px;color:var(--ink-mute);">
+      Honour system on the success cut &mdash; you tell me when a system candidate places. We agree the cut on the second role only if Phase 1 actually delivers replies and a shortlist.
+    </p>
+  </section>
+
+  <!-- ===== YOUR TOOL COSTS ===== -->
+  <section>
+    <div class="section-tag">Your tool costs</div>
+    <h2>Eighty quid <span class="grad">a month.</span></h2>
+    <p>Everything else is free. Cancellable if it doesn&rsquo;t deliver.</p>
+
+    <div class="check-card">
+      <div class="tool-row">
+        <div class="name">LinkedIn Sales Navigator Advanced<span class="sub">Upgrade from your current Premium. Cancel any time.</span></div>
+        <div class="cost">&pound;80/mo</div>
+      </div>
+      <div class="tool-row">
+        <div class="name">Attio CRM<span class="sub">Free tier covers 250 records. You&rsquo;ll be well under that for Phase 1.</span></div>
+        <div class="cost">Free</div>
+      </div>
+      <div class="tool-row">
+        <div class="name">Granola call recorder<span class="sub">Free tier. Captures and summarises every Zoom call.</span></div>
+        <div class="cost">Free</div>
+      </div>
+      <div class="tool-row">
+        <div class="name">Claude API for personalisation<span class="sub">Bundled into the &pound;500. You don&rsquo;t see this cost.</span></div>
+        <div class="cost">Included</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AFTER PHASE 1 ===== -->
+  <section>
+    <div class="section-tag">If Phase 1 works</div>
+    <h2>Two rungs we can <span class="grad">bolt on after.</span></h2>
+    <p>Don&rsquo;t commit now. These are paid add-ons later if Phase 1 actually delivers replies.</p>
+
+    <div class="ladder-list">
+
+      <div class="ladder">
+        <div class="ladder-tag">Phase 2</div>
+        <div class="ladder-body">
+          <h4>Auto-send via Heyreach</h4>
+          <p>The system sends the personalised messages for you, paced through the day so LinkedIn doesn&rsquo;t flag anything. You stop touching the manual send step.</p>
+          <span class="cost">+&pound;400 build &middot; +&pound;100/mo tool</span>
+        </div>
+      </div>
+
+      <div class="ladder">
+        <div class="ladder-tag">Phase 3</div>
+        <div class="ladder-body">
+          <h4>Add email channel</h4>
+          <p>Some senior people don&rsquo;t check LinkedIn DMs. Plug in Apollo for verified emails + Instantly for cold-email sending. Roughly doubles reach per role.</p>
+          <span class="cost">+&pound;400 build &middot; +&pound;110/mo tools</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== APPROVE ===== -->
+  <section>
+    <div class="section-tag">Approve</div>
+    <h2>Sound right? <span class="grad">Let&rsquo;s go.</span></h2>
+
+    <div class="approve-card">
+      <h3>I&rsquo;m in. Crack on.</h3>
+      <p class="lead">One click sends me a confirmation. Anything you want tweaked, jot it below before you hit the button.</p>
+
+      <div class="field">
+        <label for="tweak">Anything to change?</label>
+        <p class="helper">Optional. Push back on the money, the scope, the timing &mdash; anything. Leave blank if you&rsquo;re happy.</p>
+        <textarea id="tweak" placeholder="e.g. Happy with everything but let's start mid-June not this Monday. Or: keep the build fee but I'd want 4% on placement not 5%..."></textarea>
+      </div>
+
+      <div class="approve-actions">
+        <button type="button" class="btn" onclick="approveProposal()">I&rsquo;m in. Crack on &nbsp;→</button>
+        <button type="button" class="btn-ghost btn" onclick="discussFirst()">Want to discuss first</button>
+      </div>
+      <div id="reply-status" class="reply-status"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>Unbehind · For Max Maufe · Phase 1 proposal · 15 May</div>
+  <div><a href="mailto:jamesharrop@gmail.com">jamesharrop@gmail.com</a></div>
+</footer>
+
+<script>
+  function approveProposal() {
+    const tweak = document.getElementById('tweak').value.trim();
+    const subject = 'Max Maufe — PROPOSAL APPROVED — crack on';
+    const body = [
+      'Approved. Crack on.',
+      '',
+      tweak ? '— Tweaks / notes —' : '— No tweaks —',
+      tweak,
+      '',
+      '— Max'
+    ].filter(Boolean).join('\n');
+    const mailto = 'mailto:jamesharrop@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = mailto;
+
+    const status = document.getElementById('reply-status');
+    status.textContent = 'Your email app should have opened. If not, just email jamesharrop@gmail.com to confirm.';
+    status.classList.add('show');
+  }
+
+  function discussFirst() {
+    const tweak = document.getElementById('tweak').value.trim();
+    const subject = 'Max Maufe — want to discuss the proposal';
+    const body = [
+      'Hi James,',
+      '',
+      'Want to talk through the proposal before approving. Bits I want to discuss:',
+      '',
+      tweak || '(blank — I&rsquo;ll explain on the call)',
+      '',
+      '— Max'
+    ].join('\n');
+    const mailto = 'mailto:jamesharrop@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = mailto;
+  }
+</script>
+
+</body>
+</html>
